@@ -3,6 +3,8 @@ import Link from "next/link";
 import { LatestPost } from "~/app/_components/post";
 import { auth } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
+import FlightSearch from "./_components/FlightSearch";
+import UserFlights from "./_components/UserFlights";
 import Dashboard from "./dashboard";
 
 export default async function Home() {
@@ -15,6 +17,7 @@ export default async function Home() {
 
   return (
     <HydrateClient>
+      <UserFlights />
       <Dashboard />
     </HydrateClient>
   );
