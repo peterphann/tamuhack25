@@ -1,35 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./_components/navbar";
 import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
   const { data: session } = useSession();
+  const [name, setName] = useState([]);
 
-  if (!session) {
-    return <p>Please sign in to view your profile.</p>;
-  }
-
-  const userId = session.user.id;
+  const userId = session?.user?.id;
 
   const fetchUser = async (id: string) => {
     try {
-      const response = await fetch(`/api/user-flights?user_id=${userId}`);
-      if (!response.ok) {
-        const errorData = await response.json();
-        return;
-      }
+      const response = await fetch(`/api/user?id=${id}`);
 
-      const data = await response.json();
-      setFlightData(data);
-      console.log(data);
+      if (response.ok) {
+        const data = await response.json();
+        setName(data[0].name.split(" "));
+      }
     } catch (err) {
-      setError("An error occurred while fetching flight data.");
-    } finally {
-      setLoading(false);
+      console.log("An error occurred while fetching user data.");
     }
   };
+
+  useEffect(() => {
+    if (userId) {
+      fetchUser(userId);
+    }
+  }, [userId]);
+
+  // Render fallback while session is loading
+  if (!session) {
+    return <p>Loading session, please sign in...</p>;
+  }
 
   return (
     <div className="mx-24 my-16">
@@ -37,7 +40,7 @@ const Dashboard = () => {
       <div className="flex flex-col">
         <div className="flex gap-4">
           <h1 className="font-afacad mb-2 text-7xl font-bold">
-            Welcome, Meeba Peeba!
+            Welcome, {name[0] || "Guest"}!
           </h1>
           <img src="airplane.svg" alt="" />
         </div>

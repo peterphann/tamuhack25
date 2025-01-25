@@ -3,7 +3,7 @@ import { db } from "~/server/db";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const userId = searchParams.get("user_id");
+  const userId = searchParams.get("id");
 
   if (!userId) {
     return NextResponse.json(
