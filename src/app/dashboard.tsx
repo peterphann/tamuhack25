@@ -1,7 +1,36 @@
+"use client";
+
 import React from "react";
 import Navbar from "./_components/navbar";
+import { useSession } from "next-auth/react";
 
 const Dashboard = () => {
+  const { data: session } = useSession();
+
+  if (!session) {
+    return <p>Please sign in to view your profile.</p>;
+  }
+
+  const userId = session.user.id;
+
+  const fetchUser = async (id: string) => {
+    try {
+      const response = await fetch(`/api/user-flights?user_id=${userId}`);
+      if (!response.ok) {
+        const errorData = await response.json();
+        return;
+      }
+
+      const data = await response.json();
+      setFlightData(data);
+      console.log(data);
+    } catch (err) {
+      setError("An error occurred while fetching flight data.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="mx-24 my-16">
       <Navbar />
