@@ -2,13 +2,8 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import { Afacad } from "next/font/google"
 
 import { TRPCReactProvider } from "~/trpc/react";
-
-export const afacad = Afacad({
-  subsets: ["latin"]
-})
 
 export const metadata: Metadata = {
   title: "Flock",
