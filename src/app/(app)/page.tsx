@@ -4,7 +4,6 @@ import Image from "next/image";
 import { afacad } from "../layout";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
   const session = await auth();
 
   if (session?.user) {
