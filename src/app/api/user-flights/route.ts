@@ -23,7 +23,6 @@ export async function GET(request: Request) {
         date: true,
       },
     });
-    console.log(result);
 
     const userFlights = result;
 
@@ -44,8 +43,23 @@ export async function GET(request: Request) {
         }
 
         const flightData = await response.json();
-        console.log(flightData);
-        return { ...flight, ...flightData }; // Merge local flight and fetched details
+
+        // Extract only the first flight for the given flight ID
+        const firstFlight = flightData[0];
+
+        // Merge the basic flight info with the first detailed flight info
+        return {
+          flight_id: flight.flight_id,
+          date: flight.date,
+          flightNumber: firstFlight.flightNumber,
+          origin: firstFlight.origin,
+          destination: firstFlight.destination,
+          departureTime: firstFlight.departureTime,
+          arrivalTime: firstFlight.arrivalTime,
+          distance: firstFlight.distance,
+          duration: firstFlight.duration,
+          aircraft: firstFlight.aircraft,
+        };
       }),
     );
 
