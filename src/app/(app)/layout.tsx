@@ -1,15 +1,16 @@
-import { Navbar } from "~/components/navbar";
+import { SessionProvider } from "next-auth/react";
+import { Navbar } from "~/app/_components/navbar";
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
-    <Navbar />
+    <SessionProvider>
+      <Navbar />
 
-    <main>
-        {children}
-    </main>
-    </>
+  <main>
+      {children}
+  </main>
+    </SessionProvider>
   );
 }
