@@ -1,21 +1,19 @@
 import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
-import { Afacad } from "next/font/google";
-
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { SessionProvider } from "next-auth/react";
+import { Afacad } from "next/font/google";
 
-const afacad = Afacad({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-afacad",
-});
+export const afacad = Afacad({
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Flock",
+  description: "Make delays more managable!",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -24,7 +22,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <SessionProvider>
-      <html lang="en" className={`${GeistSans.variable} ${afacad.variable}`}>
+      <html lang="en" className={`${GeistSans.variable}`}>
         <body>
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </body>
