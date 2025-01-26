@@ -65,10 +65,10 @@ const Dashboard = () => {
 
   return (
     <div className="mx-24 my-16">
-      <div className="fixed -z-50 bottom-20 right-20 scale-[2.5] -rotate-45 w-96 h-96 opacity-5">
-            <RiPlaneFill className="w-full h-full" />
-        </div>
-      
+      <div className="fixed bottom-20 right-20 -z-50 h-96 w-96 -rotate-45 scale-[2.5] opacity-5">
+        <RiPlaneFill className="h-full w-full" />
+      </div>
+
       <div className="flex flex-col">
         <div className={"flex gap-4 " + afacad.className}>
           <h1 className="mb-2 text-7xl font-bold">
@@ -118,14 +118,13 @@ const Dashboard = () => {
                   {flight.destination.city}, , US ({flight.destination.code})
                 </p>
               </div>
-              <img src="beeline1.svg" alt="" />
-              <div className="flex items-center justify-center">
-                <p className="rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-lg font-semibold">
+              <div className="flex items-center justify-center gap-4">
+                <img src="beeline1.svg" alt="" className="w-5/12" />
+                <p className="w-2/12 rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-lg font-semibold">
                   {flight.duration.hours} hr {flight.duration.minutes} min
                 </p>
+                <img src="beeline2.svg" alt="" className="w-5/12" />
               </div>
-
-              <img src="beeline2.svg" alt="" />
               <div className="flex flex-col text-right">
                 <p className="font-light">
                   {parseDate(flight.arrivalTime).date}

@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="plane fixed top-0 left-0 -z-50">
+    <div className="plane absolute top-0 left-0 w-full h-auto -z-50">
       <Image src={"/plane.png"} alt="Plane Banner" width="3000" height="1250" />
     </div>
 
@@ -33,35 +33,35 @@ export default function Home() {
       </Button>
     </div>
 
-    <div className={cn("flex flex-col mx-32 mt-80 my-32 gap-y-16", afacad.className)}>
+    <div className={cn("flex flex-col mx-32 mt-48 mb-32 gap-y-32", afacad.className)}>
       <div className="flex justify-between items-center gap-x-12">
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 w-1/3">
           <h3 className="text-2xl font-bold">Hotel Vouchers</h3>
           <h4 className="text-4xl font-bold">View and accept hotel vouchers</h4>
-          <p className="text-xl w-2/3">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
+          <p className="text-xl">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
         </div>
 
-        <Image className="w-4/5 object-contain shadow-lg rounded-md" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
+        <Image className="w-2/3 object-contain shadow-lg rounded-md hover:-translate-y-2 duration-300" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
       </div>
 
       <div className="flex justify-between items-center gap-x-12">
-        <Image className="w-4/5 object-contain shadow-lg rounded-md" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
+        <Image className="w-2/3 object-contain shadow-lg rounded-md hover:-translate-y-2 duration-300" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
 
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 w-1/3">
           <h3 className="text-2xl font-bold">Hotel Vouchers</h3>
           <h4 className="text-4xl font-bold">View and accept hotel vouchers</h4>
-          <p className="text-xl w-2/3">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
+          <p className="text-xl">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
         </div>
       </div>
 
       <div className="flex justify-between items-center gap-x-12">
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2 w-1/3">
           <h3 className="text-2xl font-bold">Hotel Vouchers</h3>
           <h4 className="text-4xl font-bold">View and accept hotel vouchers</h4>
-          <p className="text-xl w-2/3">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
+          <p className="text-xl">Flock provides a convenient way to redeem vouchers from any delayed/cancelled flight and send the money to your bank account.</p>
         </div>
 
-        <Image className="w-4/5 object-contain shadow-lg rounded-md" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
+        <Image className="w-2/3 object-contain shadow-lg rounded-md hover:-translate-y-2 duration-300" src={"/hotels.png"} alt="hotels" width="1920" height="1080" />
       </div>
     </div>
     </>
