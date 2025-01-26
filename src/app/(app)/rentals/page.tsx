@@ -21,7 +21,6 @@ export default function Rentals() {
       const data = await response.json();
 
       const randomCars = data.sort(() => 0.5 - Math.random()).slice(0, 10);
-      console.log(randomCars);
       setCars(randomCars);
     }
 
@@ -33,7 +32,7 @@ export default function Rentals() {
   }
 
   return (
-    <div className="mx-32 mt-10">
+    <div className="mx-32 my-16">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-4xl font-bold">
           Rentals near {flightData.origin.city || "your location"}
