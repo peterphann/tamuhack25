@@ -25,7 +25,7 @@ export default function Home() {
     <div className={"mx-28 mt-10"}>
       <motion.div initial={{opacity: 0, translateY: 20}} animate={{opacity: 1, translateY: 0}} transition={{duration: 3, delay: 0.5, type: "spring"}}>
         <h1 className={"text-6xl font-bold " + afacad.className}>
-          Make delays more managable!
+          Turn delays into fun days!
         </h1>
       </motion.div>
 
