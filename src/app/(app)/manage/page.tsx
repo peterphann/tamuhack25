@@ -20,6 +20,7 @@ export default function Manage() {
   useEffect(() => {
     if (flight) {
       setFlightData(JSON.parse(flight as string));
+      console.log(JSON.parse(flight as string));
     }
   }, [flight]);
 
@@ -55,6 +56,7 @@ export default function Manage() {
               alt=""
               className="mb-4 h-[320px] rounded object-cover"
             />
+
             <p>
               Are you stuck in a city you are unfamiliar with? Make an itinerary
               with Flock to turn your delay into a fun day!
@@ -64,45 +66,53 @@ export default function Manage() {
             </Button>
           </div>
         </Link>
-        <Link
+
+        <div
           draggable="false"
-          href={"/hotels"}
-          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
+          className="flex w-1/3 origin-bottom translate-y-0 select-none flex-col justify-between opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100 active:translate-y-0 active:scale-100"
         >
-          <p className="mb-4 text-xl font-semibold">Hotel Voucher</p>
-          <div className="flex h-full flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
-            <img
-              src="hotel.jpg"
-              alt=""
-              className="mb-4 h-[320px] rounded object-cover"
-            />
-            <p>
-              If your flight is canceled or significantly delayed due to reasons
-              within American Airlines&apos; control (e.g., maintenance issues),
-              and you are away from your home city, the airline will provide...
-            </p>
-            <ul className="mt-4 list-outside list-disc pl-4">
-              <li>A voucher for an approved hotel with available rooms.</li>
-              <li>Transportation to and from the hotel.</li>
-              <li>Meal vouchers if the delay exceeds 3 hours.</li>
-            </ul>
-            <Button className="mt-4 bg-black text-white hover:bg-gray-600">
-              Book a Hotel
+          <p className="mb-2 text-xl font-semibold">Hotel Voucher</p>
+          <div className="flex h-96 flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+            <div>
+              <p>
+                If your flight is canceled or significantly delayed due to
+                reasons within American Airlines&apos; control (e.g.,
+                maintenance issues), and you are away from your home city, the
+                airline will provide...
+              </p>
+              <ul className="mt-4 list-outside list-disc pl-4">
+                <li>A voucher for an approved hotel with available rooms.</li>
+                <li>Transportation to and from the hotel.</li>
+                <li>Meal vouchers if the delay exceeds 3 hours.</li>
+              </ul>
+            </div>
+            <Button
+              asChild
+              className="mt-4 bg-black text-white hover:bg-gray-600"
+            >
+              <Link
+                href={{
+                  pathname: "/hotels",
+                  query: {
+                    latitude: flightData.origin.location.latitude,
+                    longitude: flightData.origin.location.longitude,
+                    airportCode: flightData.origin.code,
+                    flightId: flightData.flight_id, // Pass the flightId here
+                  },
+                }}
+              >
+                Redeem Vouchers
+              </Link>
             </Button>
           </div>
-        </Link>
-        <Link
+        </div>
+
+        <div
           draggable="false"
-          href={"/rentals"}
-          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
+          className="w-1/3 origin-bottom translate-y-0 select-none opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100 active:translate-y-0 active:scale-100"
         >
-          <p className="mb-4 text-xl font-semibold">Car Rentals</p>
-          <div className="flex h-full flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
-            <img
-              src="car_rental.png"
-              alt=""
-              className="mb-4 h-[320px] rounded object-cover"
-            />
+          <p className="mb-2 text-xl font-semibold">Car Rentals</p>
+          <div className="flex h-96 flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
             <p>
               We know that it can be challenging to find transportation in a new
               city. Use Flock&apos;s car rental management system to arrange a
