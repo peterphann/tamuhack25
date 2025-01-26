@@ -5,6 +5,7 @@ import { Button } from "~/components/ui/button";
 import { Afacad } from "next/font/google"
 import { signIn, useSession } from "next-auth/react";
 import { cn } from "~/lib/utils";
+import Link from "next/link";
 
 const afacad = Afacad({
     subsets: ['latin']
@@ -29,7 +30,11 @@ export default function Home() {
       </h2>
 
       {session
-      ? <></> 
+      ? <Link href={"/dashboard"}>
+        <Button className="mt-8">
+          Dashboard
+        </Button> 
+      </Link>
       : <Button className="mt-8" onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
         <Image className="w-4 h-4" src={"/american.png"} alt="AA" width="50" height="50" />
         <p>Sign in via American Airlines</p>

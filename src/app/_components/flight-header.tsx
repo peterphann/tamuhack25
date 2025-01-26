@@ -22,7 +22,7 @@ const FlightHeader = ({ flight }: Props) => {
         </p>
       </Link>
       {flight.canceled && (
-        <p className="flex-1 text-right text-red">Status: canceled</p>
+        <p className="flex-1 text-right text-red">Canceled</p>
       )}
     </div>
   );
