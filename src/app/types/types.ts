@@ -8,6 +8,20 @@ interface Location {
     },
 }
 
+export interface Event {
+    time: string,
+    activity: string,
+    description: string,
+    location: string,
+    website: string | null
+}
+
+export interface Itinerary {
+    city: string,
+    date: string,
+    itinerary: Event[]
+}
+
 export interface Flight {
     flightNumber: string,
     origin: Location,
