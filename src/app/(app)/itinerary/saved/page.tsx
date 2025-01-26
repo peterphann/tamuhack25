@@ -96,7 +96,8 @@ export default function Itineraries() {
         <Dialog open={mapVisible} onOpenChange={setMapVisible}>
             <DialogContent onCloseAutoFocus={() => setCurrentEvent(null)}>
             <DialogTitle className="mb-3">
-                {currentEvent?.activity}
+                <p>{currentEvent?.activity}</p>
+                <p className="opacity-50 text-sm font-normal mt-1">{currentEvent?.location}</p>
             </DialogTitle>
 
             <div className="flex justify-center">

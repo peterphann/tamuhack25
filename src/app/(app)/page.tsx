@@ -8,7 +8,6 @@ import { cn } from "~/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { RiCalendarTodoFill, RiCarFill, RiArrowRightSLine, RiHotelBedFill } from "react-icons/ri";
-import MapContainer from "../_components/map-container";
 
 const afacad = Afacad({
     subsets: ['latin']
