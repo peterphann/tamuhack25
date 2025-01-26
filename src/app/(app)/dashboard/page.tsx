@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
 import { RiPlaneFill } from "react-icons/ri";
 import Link from "next/link";
+import PlaneOverlay from "~/app/_components/plane-overlay";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -66,9 +67,7 @@ const Dashboard = () => {
 
   return (
     <div className="mx-24 my-16">
-      <div className="fixed bottom-20 right-20 -z-50 h-96 w-96 -rotate-45 scale-[2.5] opacity-5">
-        <RiPlaneFill className="h-full w-full" />
-      </div>
+      <PlaneOverlay />
 
       <div className="flex flex-col">
         <div className={"flex gap-4 " + afacad.className}>
@@ -120,7 +119,7 @@ const Dashboard = () => {
                   {parseDate(flight.departureTime).time}
                 </p>
                 <p className="font-light">
-                  {flight.destination.city}, , US ({flight.destination.code})
+                  {flight.destination.city} ({flight.destination.code})
                 </p>
               </div>
               <div className="flex items-center justify-center gap-4">
@@ -138,7 +137,7 @@ const Dashboard = () => {
                   {parseDate(flight.arrivalTime).time}
                 </p>
                 <p className="font-light">
-                  {flight.origin.city}, , US ({flight.origin.code})
+                  {flight.origin.city} ({flight.origin.code})
                 </p>
               </div>
             </div>

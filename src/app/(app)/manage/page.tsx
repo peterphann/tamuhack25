@@ -5,6 +5,7 @@ import { Button } from "~/components/ui/button";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Afacad } from "next/font/google";
+import PlaneOverlay from "~/app/_components/plane-overlay";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -27,6 +28,8 @@ export default function Manage() {
 
   return (
     <>
+      <PlaneOverlay />
+
       <div className={"mx-32 mt-10"}>
         <h1 className={"text-6xl font-bold " + afacad.className}>
           Flight {flightData.flight_id}

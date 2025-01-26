@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
 import { Afacad } from "next/font/google"
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { cn } from "~/lib/utils";
 
 const afacad = Afacad({
@@ -11,7 +11,8 @@ const afacad = Afacad({
 })
 
 export default function Home() {
-
+  const {data: session, status} = useSession()
+  
   return (
     <>
     <div className="plane absolute top-0 left-0 w-full h-auto -z-50">
@@ -27,10 +28,12 @@ export default function Home() {
         Get easy access to hotel vouchers and itinerary planning in the city you&apos;re delayed in.
       </h2>
 
-      <Button className="mt-8" onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
+      {session
+      ? <></> 
+      : <Button className="mt-8" onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
         <Image className="w-4 h-4" src={"/american.png"} alt="AA" width="50" height="50" />
         <p>Sign in via American Airlines</p>
-      </Button>
+      </Button>}
     </div>
 
     <div className={cn("flex flex-col mx-32 mt-48 mb-32 gap-y-32", afacad.className)}>
