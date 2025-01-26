@@ -92,11 +92,6 @@ export default function Manage() {
               within American Airlines&apos; control (e.g., maintenance issues),
               and you are away from your home city, the airline will provide...
             </p>
-            <ul className="mt-4 list-outside list-disc pl-4">
-              <li>A voucher for an approved hotel with available rooms.</li>
-              <li>Transportation to and from the hotel.</li>
-              <li>Meal vouchers if the delay exceeds 3 hours.</li>
-            </ul>
             <Button className="mt-4 bg-black text-white hover:bg-gray-600">
               Redeem Vouchers
             </Button>
