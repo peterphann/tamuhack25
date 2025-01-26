@@ -66,7 +66,7 @@ export default function ItineraryCreate() {
   } 
 
   return (
-    <div className="mx-24 my-12">
+    <div className="mx-28 my-10">
       {itinerary ? <div>
         <p className={"text-6xl font-bold " + afacad.className}>
         Itinerary for {itinerary.city}
@@ -97,7 +97,7 @@ export default function ItineraryCreate() {
           ))}
         </div>
         <div className="border-l border-gray-300"></div>
-        <div className="flex flex-col gap-4">
+        <form onSubmit={e => {e.preventDefault(); generateItinerary()}} className="flex flex-col gap-4">
           <div className="space-y-4">
             <div className="flex flex-col space-y-2 w-72">
               <Label>Location</Label>
@@ -173,8 +173,8 @@ export default function ItineraryCreate() {
               </div>
             </RadioGroup>
           </div>
-          <Button onClick={generateItinerary} className="w-52 mt-3">Generate Itinerary</Button>
-        </div>
+          <Button type="submit" className="w-52 mt-3">Generate Itinerary</Button>
+        </form>
       </div>
     </div>
   );

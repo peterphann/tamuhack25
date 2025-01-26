@@ -30,7 +30,7 @@ export default function Manage() {
   }
 
   return (
-    <div className="mx-32">
+    <div className="mx-28">
       <PlaneOverlay />
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>

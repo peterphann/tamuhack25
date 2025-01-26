@@ -41,12 +41,12 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="mx-24 my-16">
+    <div className="mx-28 my-10">
       <PlaneOverlay />
 
       <div className="flex flex-col">
         <div className={"flex gap-4 " + afacad.className}>
-          <h1 className="mb-2 text-7xl font-bold">
+          <h1 className="mb-2 text-6xl font-bold">
             Welcome, {session.user.name}!
           </h1>
         </div>
