@@ -21,14 +21,14 @@ export const Navbar = () => {
         { status === "authenticated" ?
         <div className={"flex justify-between items-center text-lg"}>
             <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/dashboard"}>Dashboard</Link>
-            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/itineraries"}>Itineraries</Link>
+            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/itinerary/saved"}>Itineraries</Link>
             <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/support"}>Support</Link>
 
             <Popover>
                 <PopoverTrigger>
                     <Image className="w-14 rounded-full" src={session.user.image ?? "/avatar.png"} alt="Profile" width="100" height="100"/>
                 </PopoverTrigger>
-                <PopoverContent className="w-64 text-sm space-y-2" align="end">
+                <PopoverContent className="w-44 text-sm space-y-2" align="end">
                     <Link href="/account" className="hover:opacity-50 duration-200 transition-opacity">
                         <div>
                             Account
