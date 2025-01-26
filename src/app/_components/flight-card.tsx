@@ -31,7 +31,7 @@ const parseDate = (timestamp: string): { date: string; time: string } => {
 
 export default function FlightCard({ flight, header = true }: Props) {
   return (
-    <div className="mt-8 flex flex-col">
+    <div className="mt-2 flex flex-col">
       {header && <FlightHeader flight={flight} />}
       <div className="my-4 grid grid-cols-[2fr_7fr_2fr] items-center justify-between rounded bg-slate-100 p-4 px-8 shadow-md">
         <div className="flex flex-col">

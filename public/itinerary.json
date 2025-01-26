@@ -1,0 +1,34 @@
+{
+    "date": "2025-01-25",
+    "city": "Los Angeles, CA",
+    "itinerary": [
+      {
+        "time": "2025-01-25T12:00:00Z",
+        "activity": "The Ivy",
+        "description": "A trendy upscale spot known for its celebrity clientele and Californian-inspired cuisine, offering both indoor and outdoor seating.",
+        "location": "113 N Robertson Blvd, Los Angeles, CA 90048",
+        "website": "https://www.theivyrestaurant.com"
+      },
+      {
+        "time": "2025-01-25T14:00:00Z",
+        "activity": "The Grove",
+        "description": "A popular open-air shopping and entertainment complex, perfect for strolling, with shopping, dining, and an iconic trolley.",
+        "location": "189 The Grove Dr, Los Angeles, CA 90036",
+        "website": "https://www.thegrovela.com"
+      },
+      {
+        "time": "2025-01-25T17:00:00Z",
+        "activity": "Hollywood Walk of Fame",
+        "description": "A historic landmark with over 2,600 brass stars honoring the stars of the entertainment industry, perfect for a light stroll and photos.",
+        "location": "Hollywood Blvd, Los Angeles, CA 90028",
+        "website": ""
+      },
+      {
+        "time": "2025-01-25T19:00:00Z",
+        "activity": "The Roof on Wilshire",
+        "description": "A rooftop dining experience offering great views of the city with a menu of craft cocktails and upscale Californian fare.",
+        "location": "6317 Wilshire Blvd, Los Angeles, CA 90048",
+        "website": "https://www.roofonwilshire.com"
+      }
+    ]
+  }
