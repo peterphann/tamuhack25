@@ -27,7 +27,14 @@ export default function Hotels() {
         }
 
         const data = await response.json();
-        setHotelResults(data);
+
+        // Modify prices to $100, sort by rating, and cap at 10 results
+        const processedHotels = data
+          .map((hotel: any) => ({ ...hotel, price: 100 }))
+          .sort((a: any, b: any) => (b.rating || 0) - (a.rating || 0))
+          .slice(0, 9);
+
+        setHotelResults(processedHotels);
       } catch (error) {
         console.error("Error fetching hotel data:", error);
       }
@@ -62,8 +69,8 @@ export default function Hotels() {
               />
             )}
             <div className="mb-2 flex justify-between">
-              <p className="text-xl font-bold">${hotel.price || "N/A"}</p>
-              <p className="text-sm text-gray-500">{hotel.rating || "N/A"}</p>
+              <p className="text-xl font-bold">${hotel.price}</p>
+              <p className="text-sm text-gray-500">{hotel.rating || "N/A"}/5</p>
             </div>
             <h2 className="mb-1 text-lg font-semibold">{hotel.name}</h2>
             <p className="mb-4 text-sm text-gray-500">
