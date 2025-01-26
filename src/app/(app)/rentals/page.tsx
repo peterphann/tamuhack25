@@ -47,9 +47,7 @@ export default function Rentals() {
         {cars.map((car: any, index: number) => (
           <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md">
             <img
-              src={
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg/2880px-2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg"
-              }
+              src={car.image}
               className="mb-4 h-40 w-full rounded-lg object-cover"
             />
             <div className="mb-2 flex justify-between">
