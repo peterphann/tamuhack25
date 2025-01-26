@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "~/components/ui/button";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -30,7 +29,7 @@ export default function Manage() {
   }
 
   return (
-    <div className="mx-32">
+    <div className="mx-32 mb-16">
       <PlaneOverlay />
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>
@@ -47,11 +46,17 @@ export default function Manage() {
       <div className="my-8 flex flex-row justify-between gap-4">
         <Link
           draggable="false"
-          href={"/itinerary/create?test"}
-          className="w-1/3 origin-bottom translate-y-0 select-none opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100 active:translate-y-0 active:scale-100"
+          href={`/itinerary/create?location=${flightData.origin.city}&date=${flightData.departureTime}`}
+          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
         >
-          <p className="mb-2 text-xl font-semibold">Itinerary Planning</p>
-          <div className="flex h-96 flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+          <p className="mb-4 text-xl font-semibold">Itinerary Planning</p>
+          <div className="flex h-full flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+            <img
+              src="itinerary.webp"
+              alt=""
+              className="mb-4 h-[320px] rounded object-cover"
+            />
+
             <p>
               Are you stuck in a city you are unfamiliar with? Make an itinerary
               with Flock to turn your delay into a fun day!
@@ -118,7 +123,7 @@ export default function Manage() {
               Find a Rental
             </Button>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );
