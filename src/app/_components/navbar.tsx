@@ -5,6 +5,8 @@ import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 import { Afacad } from "next/font/google"
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover"
+import { usePathname } from "next/navigation"
+import { cn } from "~/lib/utils"
 
 const afacad = Afacad({
     subsets: ['latin']
@@ -12,6 +14,7 @@ const afacad = Afacad({
 
 export const Navbar = () => {
     const {data: session, status} = useSession()
+    const pathname = usePathname();
 
     return <nav className={"w-full h-36 px-24 py-8 grid grid-cols-[4fr_3fr] items-center " + afacad.className}>
         <Link className="w-max" href={"/"}>
@@ -20,20 +23,16 @@ export const Navbar = () => {
 
         { status === "authenticated" ?
         <div className={"flex justify-between items-center text-lg"}>
-            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/dashboard"}>Dashboard</Link>
-            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/itinerary/saved"}>Itineraries</Link>
-            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/support"}>Support</Link>
+            <Link className={cn("hover:opacity-50 duration-200 transition-opacity", pathname === "/dashboard" ? "opacity-50" : undefined)} href={"/dashboard"}>Dashboard</Link>
+            <Link className={cn("hover:opacity-50 duration-200 transition-opacity", pathname === "/itinerary/saved" ? "opacity-50" : undefined)} href={"/itinerary/saved"}>Itineraries</Link>
+            <Link className={cn("hover:opacity-50 duration-200 transition-opacity", pathname === "/support" ? "opacity-50" : undefined)} href={"/support"}>Support</Link>
 
             <Popover>
                 <PopoverTrigger>
                     <Image className="w-14 rounded-full" src={session.user.image ?? "/avatar.png"} alt="Profile" width="100" height="100"/>
                 </PopoverTrigger>
                 <PopoverContent className="w-44 text-sm space-y-2" align="end">
-                    <Link href="/account" className="hover:opacity-50 duration-200 transition-opacity">
-                        <div>
-                            Account
-                        </div>
-                    </Link>
+
                     <div className="hover:cursor-pointer hover:opacity-50 duration-200 transition-opacity" onClick={() => signOut({callbackUrl: "/", redirect: true})}>
                         Sign Out
                     </div>
@@ -41,7 +40,8 @@ export const Navbar = () => {
             </Popover>
         </div>
         :
-        <div className={"flex justify-end text-lg"}>
+        <div className={"flex justify-end text-lg space-x-16"}>
+            <Link className={cn("hover:opacity-50 duration-200 transition-opacity", pathname === "/support" ? "opacity-50" : undefined)} href={"/support"}>Support</Link>
             <div className="hover:cursor-pointer hover:opacity-50 duration-200 transition-opacity" onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
                 Log In
             </div>

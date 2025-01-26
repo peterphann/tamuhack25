@@ -64,18 +64,21 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model user_flights {
+model userFlights {
   user_id        String?
   date           String?
   flight_id      String?
   canceled       Boolean?
   id             Int      @id @default(autoincrement())
   voucher_amount Int?
+
+  @@map("user_flights")
 }
 
 model itineraries {
-  user_id   String  @id(map: "itineraties_pkey")
-  name      String  @db.VarChar(50)
-  flight_id String?
-  itinerary Json?   @db.Json
+  itinerary_id   Int      @id @default(autoincrement())
+  user_id        String?
+  name           String?  @db.VarChar(50)
+  itinerary_data Json?    @db.Json
+  date_created   DateTime @default(now()) @db.Timestamp(6)
 }

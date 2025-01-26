@@ -1,12 +1,16 @@
 import Image from "next/image";
 import { Afacad } from "next/font/google";
-import {RiArrowRightSLine } from "react-icons/ri";
+import {RiArrowRightSLine, RiQuestionFill } from "react-icons/ri";
 const afacad = Afacad({
   subsets: ["latin"],
 });
 export default function Support() {
   return (
     <div className="mx-28 mb-16">
+      <div className="fixed bottom-20 right-20 -z-50 h-96 w-96 -rotate-45 scale-[2] opacity-[0.03]">
+        <RiQuestionFill className="h-full w-full" />
+      </div>
+
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>Having Issues?</h1>
         <p className={"mt-2 text-xl text-[#808080] " + afacad.className}>
@@ -28,8 +32,8 @@ export default function Support() {
                 </p>
               </div>
               <div>
-                <p>
-                  Contact American airlines for support regarding flight delay
+                <p className="mt-1 mb-6">
+                  Contact American Airlines for support regarding flight delay
                   times and cancellations.
                 </p>
               </div>
@@ -39,9 +43,9 @@ export default function Support() {
                 <p>800-433-7300</p>
                 <p>american.support@aa.com</p>
               </div>
-              <a href="mailto:american.support@aa.com" className="w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
+              <a href="mailto:american.support@aa.com" className="transition-all text-sm w-fit group flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
                 <p>Email American Airlines</p>
-                <RiArrowRightSLine className=" w-6 h-6" />
+                <RiArrowRightSLine className="group-hover:ml-0.5 w-6 h-6" />
               </a>
             </div>
           </div>
@@ -57,7 +61,7 @@ export default function Support() {
               </div>
               <div>
                 <p>
-                Contact flock for support regarding our itinerary creation, hotel voucher management, and car rental services.
+                Contact Flock for support regarding our itinerary creation, hotel voucher management, and car rental services.
                 </p>
               </div>
             </div>
@@ -66,9 +70,9 @@ export default function Support() {
                 <p>800-123-4567</p>
                 <p>flock@gmail.com</p>
               </div>
-              <div className="w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
+              <div className="transition-all group text-sm w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
                 <p>Email Flock</p>
-                <RiArrowRightSLine className=" w-6 h-6" />
+                <RiArrowRightSLine className="group-hover:ml-0.5 w-6 h-6" />
               </div>
             </div>
           </div>
