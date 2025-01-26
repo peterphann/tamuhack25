@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import { Button } from "~/components/ui/button";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -18,28 +18,29 @@ export default function Manage() {
   useEffect(() => {
     if (flight) {
       setFlightData(JSON.parse(flight as string));
+      console.log(JSON.parse(flight as string));
     }
   }, [flight]);
 
   if (!flightData) {
-    return;
+    return null;
   }
 
   return (
     <>
-      <div className={"mx-32 mt-10"}>
+      <div className="mx-32 mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>
           Flight {flightData.flight_id}
         </h1>
       </div>
-      <div className={"mx-32 mt-4"}>
+      <div className="mx-32 mt-4">
         <p className={"text-xl text-[#808080] " + afacad.className}>
           Sorry your flight was <span className="text-[#FF8080]">canceled</span>
           . Here are your options...
         </p>
       </div>
 
-      <div className={"mx-32 mt-8 flex flex-row justify-between gap-4"}>
+      <div className="mx-32 mt-8 flex flex-row justify-between gap-4">
         <div className="w-1/3 origin-bottom translate-y-0 opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100">
           <p className="mb-2 text-xl font-semibold">Hotel Voucher</p>
           <div className="h-96 rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
@@ -54,7 +55,18 @@ export default function Manage() {
               <li>Meal vouchers if the delay exceeds 3 hours.</li>
             </ul>
             <Button className="mt-4 bg-black text-white hover:bg-gray-600">
-              Redeem Vouchers
+              <Link
+                href={{
+                  pathname: "/hotels",
+                  query: {
+                    latitude: flightData.origin.location.latitude,
+                    longitude: flightData.origin.location.longitude,
+                    airportCode: flightData.origin.code,
+                  },
+                }}
+              >
+                Redeem Vouchers
+              </Link>
             </Button>
           </div>
         </div>
