@@ -1,0 +1,625 @@
+[
+  {
+    "make": "Nissan",
+    "model": "Sentra",
+    "year": 2025,
+    "rating": null,
+    "price": 37,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg/2880px-2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "rating": 5.0,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "year": 2024,
+    "rating": null,
+    "price": 42,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/2880px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Renegade",
+    "year": 2020,
+    "rating": 5.0,
+    "price": 37,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg/560px-Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2019,
+    "rating": null,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Mercedes-Benz_W206_IMG_6380.jpg/2880px-Mercedes-Benz_W206_IMG_6380.jpg"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "EQE",
+    "year": 2024,
+    "rating": null,
+    "price": 45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mercedes-Benz_V295_350%2B_Classic-Days_2022_DSC_0018.jpg/560px-Mercedes-Benz_V295_350%2B_Classic-Days_2022_DSC_0018.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Sienna",
+    "year": 2011,
+    "rating": 4.99,
+    "price": 38,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/2021_Toyota_Sienna_XLE_Hybrid%2C_front_12.21.21.jpg/560px-2021_Toyota_Sienna_XLE_Hybrid%2C_front_12.21.21.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra Hybrid",
+    "year": 2024,
+    "rating": null,
+    "price": 40,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg/560px-Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "year": 2025,
+    "rating": null,
+    "price": 58,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hyundai_Palisade_Highlander%2C_2021_front_%28adjusted%29.jpg/2880px-Hyundai_Palisade_Highlander%2C_2021_front_%28adjusted%29.jpg"
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2018,
+    "rating": 4.96,
+    "price": 34,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nissan_Frontier_%28D41%29_Pro-4X_Automesse_Ludwigsburg_2022_1X7A5885.jpg/560px-Nissan_Frontier_%28D41%29_Pro-4X_Automesse_Ludwigsburg_2022_1X7A5885.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2024,
+    "rating": 4.42,
+    "price": 30,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg/560px-Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": null,
+    "price": 33,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Chevrolet_Malibu_LT_%28IX%2C_Facelift%29_%E2%80%93_f_02112024.jpg/2880px-Chevrolet_Malibu_LT_%28IX%2C_Facelift%29_%E2%80%93_f_02112024.jpg"
+  },
+  {
+    "make": "Nissan",
+    "model": "Sentra",
+    "year": 2018,
+    "rating": 2.41,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg/2880px-2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2023,
+    "rating": 2.34,
+    "price": 51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg/560px-Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "X5",
+    "year": 2023,
+    "rating": 2.83,
+    "price": 49,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_BMW_X5_M50d_Automatic_3.0.jpg/2880px-2019_BMW_X5_M50d_Automatic_3.0.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2015,
+    "rating": 4.13,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg/2880px-2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg"
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2014,
+    "rating": 4.55,
+    "price": 47,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/2023_Nissan_Altima_SR_in_Brilliant_Silver_Metallic%2C_front_right.jpg/2880px-2023_Nissan_Altima_SR_in_Brilliant_Silver_Metallic%2C_front_right.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2010,
+    "rating": null,
+    "price": 33,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Tahoe",
+    "year": 2023,
+    "rating": null,
+    "price": 55,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/2022_Chevrolet_Tahoe_RST%2C_front_3.7.22.jpg/560px-2022_Chevrolet_Tahoe_RST%2C_front_3.7.22.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": 2012,
+    "rating": 3.86,
+    "price": 57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/2021_Ford_Escape_Hybrid_SEL_AWD_in_Oxford_White%2C_front_left.jpg/560px-2021_Ford_Escape_Hybrid_SEL_AWD_in_Oxford_White%2C_front_left.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2024,
+    "rating": 3.49,
+    "price": 57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/560px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2018,
+    "rating": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg/560px-Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg"
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2021,
+    "rating": null,
+    "price": 56,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nissan_Frontier_%28D41%29_Pro-4X_Automesse_Ludwigsburg_2022_1X7A5885.jpg/560px-Nissan_Frontier_%28D41%29_Pro-4X_Automesse_Ludwigsburg_2022_1X7A5885.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2022,
+    "rating": null,
+    "price": 51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2017,
+    "rating": 3.62,
+    "price": 31,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2011,
+    "rating": 3.89,
+    "price": 51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/2023_Nissan_Altima_SR_in_Brilliant_Silver_Metallic%2C_front_right.jpg/2880px-2023_Nissan_Altima_SR_in_Brilliant_Silver_Metallic%2C_front_right.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2016,
+    "rating": 4.8,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg/2880px-2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2018,
+    "rating": null,
+    "price": 38,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": 2022,
+    "rating": null,
+    "price": 49,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/2021_Ford_Escape_Hybrid_SEL_AWD_in_Oxford_White%2C_front_left.jpg/560px-2021_Ford_Escape_Hybrid_SEL_AWD_in_Oxford_White%2C_front_left.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Tahoe",
+    "year": 2011,
+    "rating": null,
+    "price": 34,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/2022_Chevrolet_Tahoe_RST%2C_front_3.7.22.jpg/560px-2022_Chevrolet_Tahoe_RST%2C_front_3.7.22.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2022,
+    "rating": 3.8,
+    "price": 53,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2008_Honda_Accord_EX-L%2C_Front_Right.jpg/2880px-2008_Honda_Accord_EX-L%2C_Front_Right.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2007,
+    "rating": null,
+    "price": 47,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg/560px-Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "rating": null,
+    "price": 53,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg/560px-Honda_Civic_e-HEV_Sport_%28XI%29_%E2%80%93_f_30062024.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2019,
+    "rating": null,
+    "price": 56,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2017,
+    "rating": 4.5,
+    "price": 55,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2010,
+    "rating": null,
+    "price": 46,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2006,
+    "rating": 2.13,
+    "price": 48,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bmw_e12_v_sst.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2016,
+    "rating": null,
+    "price": 31,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg/560px-Audi_Q5_FY_50_TFSI_e_Facelift_IMG_5931.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2015,
+    "rating": 4.96,
+    "price": 45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2010,
+    "rating": 3.93,
+    "price": 51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2012,
+    "rating": null,
+    "price": 36,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg/2880px-2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2005,
+    "rating": null,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2013,
+    "rating": 4.69,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/560px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2005,
+    "rating": 2.76,
+    "price": 39,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ford_F-150_Raptor_3.5T_2019.jpg/2880px-Ford_F-150_Raptor_3.5T_2019.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2022,
+    "rating": null,
+    "price": 56,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Chevrolet_Malibu_LT_%28IX%2C_Facelift%29_%E2%80%93_f_02112024.jpg/2880px-Chevrolet_Malibu_LT_%28IX%2C_Facelift%29_%E2%80%93_f_02112024.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2017,
+    "rating": 3.38,
+    "price": 53,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": null,
+    "price": 45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/1967_Chevrolet_Chevelle_SS_396_Sports_Coupe_%2815452516841%29.jpg/2560px-1967_Chevrolet_Chevelle_SS_396_Sports_Coupe_%2815452516841%29.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Renegade",
+    "year": 2011,
+    "rating": 2.04,
+    "price": 54,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg/560px-Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2012,
+    "rating": 3.85,
+    "price": 35,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ford_F-150_Raptor_3.5T_2019.jpg/2880px-Ford_F-150_Raptor_3.5T_2019.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2009,
+    "rating": 4.88,
+    "price": 36,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2018,
+    "rating": 2.39,
+    "price": 57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg/2880px-2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2005,
+    "rating": null,
+    "price": 47,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/560px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2021,
+    "rating": null,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2005,
+    "rating": 4.43,
+    "price": 30,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bmw_e12_v_sst.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2015,
+    "rating": 3.21,
+    "price": 55,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg/560px-Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model Y",
+    "year": 2024,
+    "rating": 3.43,
+    "price": 41,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/2020_Tesla_Model_Y%2C_front_8.1.20.jpg/440px-2020_Tesla_Model_Y%2C_front_8.1.20.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2024,
+    "rating": 4.38,
+    "price": 35,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2013,
+    "rating": null,
+    "price": 47,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "year": 2012,
+    "rating": null,
+    "price": 57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/2880px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2022,
+    "rating": null,
+    "price": 30,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2008_Honda_Accord_EX-L%2C_Front_Right.jpg/2880px-2008_Honda_Accord_EX-L%2C_Front_Right.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2023,
+    "rating": null,
+    "price": 47,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ford_F-150_Raptor_3.5T_2019.jpg/2880px-Ford_F-150_Raptor_3.5T_2019.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "year": 2009,
+    "rating": 4.08,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hyundai_Palisade_Highlander%2C_2021_front_%28adjusted%29.jpg/2880px-Hyundai_Palisade_Highlander%2C_2021_front_%28adjusted%29.jpg"
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2005,
+    "rating": null,
+    "price": 59,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg/560px-Hyundai_Avante_CN7_white_%2810%29_%28cropped%29.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2019,
+    "rating": null,
+    "price": 58,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2016,
+    "rating": null,
+    "price": 40,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2020,
+    "rating": 2.28,
+    "price": 39,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2011,
+    "rating": null,
+    "price": 41,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2008_Honda_Accord_EX-L%2C_Front_Right.jpg/2880px-2008_Honda_Accord_EX-L%2C_Front_Right.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2022,
+    "rating": 3.38,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2019,
+    "rating": 4.58,
+    "price": 34,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/2019_Tesla_Model_3_Performance_AWD_Front.jpg/2880px-2019_Tesla_Model_3_Performance_AWD_Front.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2018,
+    "rating": null,
+    "price": 42,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2008_Honda_Accord_EX-L%2C_Front_Right.jpg/2880px-2008_Honda_Accord_EX-L%2C_Front_Right.jpg"
+  },
+  {
+    "make": "Tesla",
+    "model": "Model Y",
+    "year": 2018,
+    "rating": null,
+    "price": 40,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/2020_Tesla_Model_Y%2C_front_8.1.20.jpg/440px-2020_Tesla_Model_Y%2C_front_8.1.20.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2018,
+    "rating": 3.17,
+    "price": 49,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg/440px-1990-1991_BMW_318is_%28E30%29_2-door_sedan_02.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2019,
+    "rating": 3.6,
+    "price": 54,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg/560px-2019_Toyota_RAV4_LE_2.5L_front_4.14.19.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2020,
+    "rating": 2.06,
+    "price": 58,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": 4.83,
+    "price": 36,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/1967_Chevrolet_Chevelle_SS_396_Sports_Coupe_%2815452516841%29.jpg/2560px-1967_Chevrolet_Chevelle_SS_396_Sports_Coupe_%2815452516841%29.jpg"
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2007,
+    "rating": 4.74,
+    "price": 33,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bmw_e12_v_sst.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2020,
+    "rating": 3.9,
+    "price": 41,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg/560px-2019_Jeep_Cherokee_Latitude_front_5.27.18.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2014,
+    "rating": null,
+    "price": 33,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg/560px-2018_Audi_A6_Sport_40_TDi_S-A_2.0.jpg"
+  }
+]

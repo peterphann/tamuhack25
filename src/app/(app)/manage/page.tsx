@@ -104,7 +104,11 @@ export default function Manage() {
 
         <div
           draggable="false"
-          className="w-1/3 origin-bottom translate-y-0 select-none opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100 active:translate-y-0 active:scale-100"
+          href={{
+            pathname: "/rentals",
+            query: { flight: JSON.stringify(flightData) },
+          }}
+          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
         >
           <p className="mb-2 text-xl font-semibold">Car Rentals</p>
           <div className="flex h-96 flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
