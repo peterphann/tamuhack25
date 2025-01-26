@@ -13,7 +13,7 @@ const Dashboard = () => {
   const { data: session } = useSession();
   const userId = session?.user?.id;
 
-  const [flightData, setFlightData] = useState<any>([]);
+  const [flightData, setFlightData] = useState<user_flights[]>([]);
   const [hasCanceled, setHasCanceled] = useState(false);
 
   const fetchFlights = async () => {
@@ -54,7 +54,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    if (session && session.user.id) {
+    if (session?.user.id) {
       fetchFlights();
     }
   }, [session]);
@@ -105,7 +105,8 @@ const Dashboard = () => {
                 <p className="flex-1 text-right text-red">Status: canceled</p>
               )}
             </div>
-            <div className="my-4 flex justify-between rounded bg-slate-100 p-4 px-8 shadow-md">
+
+            <div className="my-4 grid grid-cols-[2fr_3fr_2fr_3fr_2fr] items-center justify-between rounded bg-slate-100 p-4 px-8 shadow-md">
               <div className="flex flex-col">
                 <p className="font-light">
                   {parseDate(flight.departureTime).date}
