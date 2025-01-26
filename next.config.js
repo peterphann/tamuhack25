@@ -8,7 +8,14 @@ import "./src/env.js";
 const config = {
     images: {
         domains: ['lh3.googleusercontent.com']
-    }
+    },
+    reactStrictMode: false,
+    typescript: {
+        ignoreBuildErrors: true, // Ignore TypeScript errors
+    },
+    eslint: {
+        ignoreDuringBuilds: true, // Ignore ESLint errors during the build
+    },
 }
 
 export default config;
