@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Afacad } from "next/font/google";
 import PlaneOverlay from "~/app/_components/plane-overlay";
+import FlightCard from "~/app/_components/flight-card";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -35,14 +36,14 @@ export default function Manage() {
           Flight {flightData.flight_id}
         </h1>
       </div>
-      <div className={"mx-32 mt-4"}>
+      <div className="flex flex-col gap-4">
+        <FlightCard flight={flightData} index={0} header={false} />
         <p className={"text-xl text-[#808080] " + afacad.className}>
           Sorry your flight was <span className="text-[#FF8080]">canceled</span>
           . Here are your options...
         </p>
       </div>
-
-      <div className={"mx-32 mt-8 flex flex-row justify-between gap-4"}>
+      <div className="mt-8 flex flex-row justify-between gap-4">
         <div className="w-1/3 origin-bottom translate-y-0 opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100">
           <p className="mb-2 text-xl font-semibold">Hotel Voucher</p>
           <div className="h-96 rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
