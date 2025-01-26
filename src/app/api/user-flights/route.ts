@@ -1,4 +1,3 @@
-import { query } from "~/lib/db";
 import { NextResponse } from "next/server";
 import { db } from "~/server/db";
 
@@ -28,7 +27,7 @@ export async function GET(request: Request) {
 
     // Fetch additional details from the flight engine for each flight
     const flightDetails = await Promise.all(
-      userFlights.map(async (flight) => {
+      userFlights.map(async (flight: any) => {
         const apiUrl = `https://flight-engine-cf28.onrender.com/flights?date=${flight.date}&flightNumber=${flight.flight_id}`;
         const response = await fetch(apiUrl);
 

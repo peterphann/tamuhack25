@@ -1,6 +1,5 @@
 "use client";
 
-import { join } from "path";
 import { useState } from "react";
 
 const UserFlights = () => {
