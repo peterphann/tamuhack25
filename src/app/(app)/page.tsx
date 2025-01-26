@@ -5,6 +5,7 @@ import { Button } from "~/components/ui/button";
 import { Afacad } from "next/font/google"
 import { signIn, useSession } from "next-auth/react";
 import { cn } from "~/lib/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { RiCalendarTodoFill, RiCarFill, RiArrowRightSLine, RiHotelBedFill } from "react-icons/ri";
 
@@ -17,9 +18,9 @@ export default function Home() {
   
   return (
     <>
-    <div className="plane absolute top-0 left-0 w-full h-auto -z-50">
+    <motion.div initial={{opacity: 0, top: -80}} animate={{opacity: 1, top: 0}} transition={{duration: 2, delay: 1}} className="plane absolute top-0 left-0 w-full h-auto -z-50">
       <Image src={"/plane.png"} alt="Plane Banner" width="3000" height="1250" />
-    </div>
+    </motion.div>
 
     <div className={"mx-28 mt-10"}>
       <h1 className={"text-6xl font-bold " + afacad.className}>

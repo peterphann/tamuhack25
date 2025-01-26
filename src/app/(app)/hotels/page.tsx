@@ -9,6 +9,7 @@ import {
   DialogContent,
   DialogFooter,
   DialogTitle,
+  DialogDescription,
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { RiExternalLinkFill, RiStarFill } from "react-icons/ri";
@@ -31,6 +32,9 @@ export default function Hotels() {
   const [hotelResults, setHotelResults] = useState<any>(null);
   const [inputAmount, setInputAmount] = useState<string>(""); // Input value for credits
   const [generatedCode, setGeneratedCode] = useState<string>("");
+
+  const [redemptionDialog, setRedemptionDialog] = useState<boolean>(false);
+  const [voucherDialog, setVoucherDialog] = useState<boolean>(false);
 
   const [redemptionMessage, setRedemptionMessage] = useState<string>("");
 
@@ -141,14 +145,15 @@ export default function Hotels() {
 
       // Update voucher amount
       setVoucherAmount((prev) => (prev !== null ? prev - amount : null));
-      alert(`Credits used successfully! Your code: ${code}`);
+      setVoucherDialog(true);
+      setRedemptionDialog(false);
     } catch (error) {
       console.error("Error using credits:", error);
     }
   };
 
   if (voucherAmount === null || !hotelResults) {
-    return <p className="mx-32 mt-10 text-xl">Loading hotel data...</p>;
+    return <p className={cn("mx-32 mt-10 text-xl", afacad.className)}>Loading hotel data...</p>;
   }
 
   return (
@@ -157,6 +162,7 @@ export default function Hotels() {
         <h1 className={cn("text-4xl font-bold", afacad.className)}>
           Hotels near {airportCode ?? "your location"}
         </h1>
+        
         <div className="flex items-center gap-4">
           <p className={cn("text-xl font-medium text-gray-700", afacad.className)}>
             You have{" "}
@@ -164,7 +170,7 @@ export default function Hotels() {
             credits
           </p>
           {/* Dialog Trigger */}
-          <Dialog>
+          <Dialog open={redemptionDialog} onOpenChange={setRedemptionDialog}>
             <DialogTrigger asChild>
               <Button className="bg-black text-white">Use Credits</Button>
             </DialogTrigger>
@@ -190,7 +196,7 @@ export default function Hotels() {
 
                   <Button
                     type="submit"
-                    className="bg-green-600 text-white hover:bg-green-700"
+                    className=" text-white hover:bg-green-700"
                   >
                     Submit
                   </Button>
@@ -208,8 +214,8 @@ export default function Hotels() {
               <Image
                 src={hotel.photo}
                 alt={`Photo of ${hotel.name}`}
-                width={"200"}
-                height={"200"}
+                width={"400"}
+                height={"400"}
                 className="mb-4 h-40 w-full rounded-lg object-cover"
               />
             )}
@@ -237,6 +243,18 @@ export default function Hotels() {
           </div>
         ))}
       </div>
+
+      <Dialog open={voucherDialog} onOpenChange={setVoucherDialog}>
+        <DialogContent>
+          <DialogTitle>
+            Credits used successfully!
+          </DialogTitle>
+
+          <DialogDescription>
+            {`Your code: ${generatedCode}`}
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

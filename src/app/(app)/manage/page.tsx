@@ -42,7 +42,7 @@ export default function Manage() {
         <FlightCard flight={flightData} header={false} />
         {flightData.canceled
         ? <p className={"text-xl text-[#808080] " + afacad.className}>
-          Sorry your flight was <span className="text-[#FF8080]">canceled</span>. Here are your options...
+          We&apos;re deeply sorry that your flight was <span className="text-[#FF8080]">canceled</span>. Here are your options.
         </p>
         : <p className={"text-xl text-[#808080] " + afacad.className}>
           Your flight is scheduled to depart on time. However, you can still manage your Flock services below.

@@ -4,6 +4,7 @@ import { Afacad } from "next/font/google";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { RiStarFill } from "react-icons/ri";
 import type { AggregateFlightDetails, Car } from "~/app/types/types";
 import { cn } from "~/lib/utils";
 
@@ -43,7 +44,7 @@ export default function Rentals() {
   }
 
   return (
-    <div className="mx-32 my-16">
+    <div className="mx-32 my-10">
       <div className={cn("mb-6 flex items-center justify-between", afacad.className)}>
         <h1 className="text-4xl font-bold">
           Rentals near {flightData.origin.city || "your location"}
@@ -59,10 +60,13 @@ export default function Rentals() {
       <div className="grid grid-cols-3 gap-8">
         {cars.map((car: Car, index: number) => (
           <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md">
-            <Image className="mb-4 h-40 w-full rounded-lg object-cover" src={car.image} alt="car" width="100" height="100"  />
+            <Image className="mb-4 h-40 w-full rounded-lg object-cover" src={car.image} alt="car" width="400" height="400"  />
             <div className="mb-2 flex justify-between">
               <p className="text-xl font-bold">${car.price}/day</p>
-              <p className="text-sm text-gray-500">{car.rating || "N/A"}</p>
+              <p className="text-sm text-gray-500 flex items-center gap-x-1">
+                <span>{car.rating || "N/A"} / 5</span>
+                <RiStarFill className="opacity-50" />
+              </p>
             </div>
             <h2 className="mb-1 text-lg font-semibold">
               {car.make + " " + car.model}
@@ -74,7 +78,7 @@ export default function Rentals() {
               href={""}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full rounded bg-black px-4 py-2 text-center text-white hover:bg-gray-700"
+              className="block w-full rounded bg-black px-4 py-2 text-center text-white hover:bg-zinc-800 transition-colors"
             >
               Rent Car
             </a>

@@ -141,9 +141,7 @@ export default function ItineraryCreate() {
           </div>
         ) : (
           <div>
-            <p className={"text-6xl font-bold " + afacad.className}>
-              Create an Itinerary
-            </p>
+            <p className={"text-6xl font-bold " + afacad.className}>Create an Itinerary</p>
             <p
               className={cn(
                 "mt-2 text-xl font-light opacity-50",
@@ -163,7 +161,7 @@ export default function ItineraryCreate() {
                 <p className="text-xl font-semibold">{item.activity}</p>
                 {item.website && (
                   <Link href={item.location}>
-                    <RiMapPin2Fill className="h-5 w-5 opacity-25" />
+                    <RiMapPin2Fill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
                   </Link>
                 )}
                 {item.website && (
@@ -172,7 +170,7 @@ export default function ItineraryCreate() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <RiExternalLinkFill className="h-5 w-5 opacity-25" />
+                    <RiExternalLinkFill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
                   </a>
                 )}
               </div>
@@ -195,6 +193,7 @@ export default function ItineraryCreate() {
             <div className="flex w-72 flex-col space-y-2">
               <Label>Location</Label>
               <Input
+                className="bg-white"
                 disabled={pageStatus === "loading"}
                 value={location ?? ""}
                 onChange={(e) => setLocation(e.target.value)}
@@ -214,7 +213,7 @@ export default function ItineraryCreate() {
           <div>
             <p className="text-xl font-semibold">Preferences</p>
             <div className="mb-2 mt-2 flex flex-wrap gap-2">
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.food}
@@ -225,7 +224,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Food</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.entertainment}
@@ -239,7 +238,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Entertainment</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.culture}
@@ -253,7 +252,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Culture</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.shopping}
@@ -267,7 +266,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Shopping</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.nature}
@@ -281,7 +280,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Nature</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.relaxation}
@@ -295,7 +294,7 @@ export default function ItineraryCreate() {
                 />
                 <p className="text-sm">Relaxation</p>
               </div>
-              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
+              <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1 bg-white">
                 <Checkbox
                   disabled={pageStatus === "loading"}
                   checked={preferences.family}
@@ -379,7 +378,7 @@ export default function ItineraryCreate() {
               <DialogContent onCloseAutoFocus={() => setItineraryName("")}>
                 <DialogHeader>
                   <DialogTitle className="mb-4">
-                    Enter a name for this itinerary:
+                    Create a name for this itinerary:
                   </DialogTitle>
 
                   <div>

@@ -4,10 +4,13 @@ import type { itineraries } from "@prisma/client";
 import { format, parseISO } from "date-fns";
 import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { RiDeleteBin6Fill } from "react-icons/ri";
+import { RiDeleteBin6Fill, RiAddLargeFill, RiMapPin2Fill, RiExternalLinkFill } from "react-icons/ri";
 import type { Itinerary } from "~/app/types/types";
+import { Dialog, DialogTitle, DialogContent } from "~/components/ui/dialog";
 import { Separator } from "~/components/ui/separator";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "~/components/ui/sheet";
 import { cn } from "~/lib/utils";
 
 const afacad = Afacad({
@@ -17,6 +20,8 @@ const afacad = Afacad({
 export default function Itineraries() {
     const { data: session } = useSession();
     const [itineraries, setItineraries] = useState<itineraries[] | null>(null);
+    const [selectedItinerary, setSelectedItinerary] = useState<itineraries | null>(null);
+    const [itineraryOpen, setItineraryOpen] = useState<boolean>(false);
 
     const deleteItinerary = (id: number) => {
         fetch(`/api/itinerary`, {
@@ -58,9 +63,9 @@ export default function Itineraries() {
         {itineraries?.map((itinerary: itineraries, index) => (
             <div key={index}>
                 <div className="flex justify-between items-center pr-8">
-                    <div>
+                    <div className="transition-transform hover:cursor-pointer hover:scale-[1.02] active:scale-100" onClick={() => {setItineraryOpen(true); setSelectedItinerary(itinerary)}}>
                         <p className="text-sm opacity-25">Created {format(itinerary.date_created, 'MMMM d, yyyy')}</p>
-                        <h2 className="text-2xl font-medium">{itinerary.name}</h2>
+                        <h2 className="text-2xl mt-2 font-medium">{itinerary.name}</h2>
                         <div className="flex gap-x-4 text-sm">
                             <p className="w-60">{((JSON.parse(itinerary.itinerary_data as string)) as Itinerary).city}</p>
                             <p className="w-60">{format(parseISO(((JSON.parse(itinerary.itinerary_data as string)) as Itinerary).date), 'MMMM d, yyyy')}</p>
@@ -76,5 +81,64 @@ export default function Itineraries() {
                 <Separator className="my-4" />
             </div>
         ))}
+
+        {itineraries && <Link className="opacity-75 text-sm transition-opacity inline-flex items-center space-x-2 hover:opacity-50" href={"/itinerary/create"}>
+            {itineraries.length > 0
+            ? <p>Searching for a new adventure?</p>
+            : <p>You have no saved itineraries!</p>}
+            <RiAddLargeFill />
+        </Link>}
+
+        <Sheet open={itineraryOpen} onOpenChange={setItineraryOpen}>
+            {selectedItinerary
+            ? <SheetContent>
+                <SheetHeader>
+                <SheetTitle className="text-2xl mb-2">{selectedItinerary.name}</SheetTitle>
+
+                    <Separator className="y-4" />
+
+
+                    <div className="mb-4 py-2">
+                        <p className="text-sm opacity-50">{((JSON.parse(selectedItinerary.itinerary_data as string)) as Itinerary).city}</p>
+                        <p className="text-sm opacity-50">Scheduled for {format(parseISO(((JSON.parse(selectedItinerary.itinerary_data as string)) as Itinerary).date), 'MMMM d, yyyy')}</p>
+                        <p className="text-sm opacity-50">Created on {format(selectedItinerary.date_created, 'MMMM d, yyyy')}</p>
+                    </div>
+
+                    <Separator className="y-4" />
+
+                    {((JSON.parse(selectedItinerary.itinerary_data as string)) as Itinerary).itinerary.map((item, index) => (
+                        <div key={index}>
+                            <p className="text-xs opacity-50 pt-4">{item.time}</p>
+                            <div className="flex items-center space-x-2">
+                                <p className="text-lg font-semibold">{item.activity}</p>
+                                {item.website && (
+                                <Link href={item.location}>
+                                    <RiMapPin2Fill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
+                                </Link>
+                                )}
+                                {item.website && (
+                                <a
+                                    href={item.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <RiExternalLinkFill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
+                                </a>
+                                )}
+                            </div>
+                            <p className="text-sm">{item.description}</p>
+                        </div>
+                    ))}
+                </SheetHeader>
+            </SheetContent>
+            : <SheetContent>
+                <SheetHeader>
+                <SheetTitle>You do not have an itinerary selected.</SheetTitle>
+                <SheetDescription>
+                    How are you even in this window?
+                </SheetDescription>
+                </SheetHeader>
+            </SheetContent>}
+            </Sheet>
     </div>
 }
