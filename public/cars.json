@@ -1,0 +1,784 @@
+[
+  {
+    "make": "Nissan",
+    "model": "Sentra",
+    "year": 2025,
+    "rating": null,
+    "price": 37,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg/2880px-2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "rating": 5.0,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "year": 2024,
+    "rating": null,
+    "price": 42,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/2880px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Renegade",
+    "year": 2020,
+    "rating": 5.0,
+    "price": 37,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg/560px-Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2019,
+    "rating": null,
+    "price": 44,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Mercedes-Benz_W206_IMG_6380.jpg/2880px-Mercedes-Benz_W206_IMG_6380.jpg"
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "EQE",
+    "year": 2024,
+    "rating": null,
+    "price": 45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mercedes-Benz_V295_350%2B_Classic-Days_2022_DSC_0018.jpg/560px-Mercedes-Benz_V295_350%2B_Classic-Days_2022_DSC_0018.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Sienna",
+    "year": 2011,
+    "rating": 4.99,
+    "price": 38
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra Hybrid",
+    "year": 2024,
+    "rating": null,
+    "price": 40
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "year": 2025,
+    "rating": null,
+    "price": 58
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2018,
+    "rating": 4.96,
+    "price": 34
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2024,
+    "rating": 4.42,
+    "price": 30
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": null,
+    "price": 33
+  },
+  {
+    "make": "Nissan",
+    "model": "Sentra",
+    "year": 2018,
+    "rating": 2.41,
+    "price": 32,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg/2880px-2021_Nissan_Sentra_SR%2C_Front_Left%2C_10-03-2021.jpg"
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2023,
+    "rating": 2.34,
+    "price": 51
+  },
+  {
+    "make": "BMW",
+    "model": "X5",
+    "year": 2023,
+    "rating": 2.83,
+    "price": 49
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2015,
+    "rating": 4.13,
+    "price": 44
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2014,
+    "rating": 4.55,
+    "price": 47
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2010,
+    "rating": null,
+    "price": 33
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Tahoe",
+    "year": 2023,
+    "rating": null,
+    "price": 55
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": 2012,
+    "rating": 3.86,
+    "price": 57
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2024,
+    "rating": 3.49,
+    "price": 57
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2018,
+    "rating": null,
+    "price": 37
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2021,
+    "rating": null,
+    "price": 56
+  },
+  {
+    "make": "BMW",
+    "model": "X3",
+    "year": 2021,
+    "rating": null,
+    "price": 46
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2022,
+    "rating": null,
+    "price": 51
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2017,
+    "rating": 3.62,
+    "price": 31
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2011,
+    "rating": 3.89,
+    "price": 51
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2016,
+    "rating": 4.8,
+    "price": 44
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2011,
+    "rating": null,
+    "price": 48
+  },
+  {
+    "make": "Ford",
+    "model": "Explorer",
+    "year": 2008,
+    "rating": 4.01,
+    "price": 38
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2018,
+    "rating": null,
+    "price": 38
+  },
+  {
+    "make": "Ford",
+    "model": "Escape",
+    "year": 2022,
+    "rating": null,
+    "price": 49
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Tahoe",
+    "year": 2011,
+    "rating": null,
+    "price": 34
+  },
+  {
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2012,
+    "rating": null,
+    "price": 41
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2022,
+    "rating": 3.8,
+    "price": 53
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2007,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "rating": null,
+    "price": 53
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Silverado",
+    "year": 2022,
+    "rating": 3.84,
+    "price": 58
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2019,
+    "rating": null,
+    "price": 56
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2017,
+    "rating": 4.5,
+    "price": 55,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2010,
+    "rating": null,
+    "price": 46
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2006,
+    "rating": 2.13,
+    "price": 48
+  },
+  {
+    "make": "Honda",
+    "model": "CR-V",
+    "year": 2009,
+    "rating": 2.49,
+    "price": 39
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2016,
+    "rating": null,
+    "price": 31
+  },
+  {
+    "make": "Jeep",
+    "model": "Wrangler",
+    "year": 2019,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2017,
+    "rating": 2.64,
+    "price": 52
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2015,
+    "rating": 4.96,
+    "price": 45,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2010,
+    "rating": 3.93,
+    "price": 51,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg/2880px-2018_Toyota_Camry_%28ASV70R%29_Ascent_sedan_%282018-08-27%29_01.jpg"
+  },
+  {
+    "make": "Jeep",
+    "model": "Wrangler",
+    "year": 2024,
+    "rating": null,
+    "price": 39
+  },
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2016,
+    "rating": 2.84,
+    "price": 35
+  },
+  {
+    "make": "Hyundai",
+    "model": "Tucson",
+    "year": 2014,
+    "rating": null,
+    "price": 50
+  },
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2009,
+    "rating": 4.88,
+    "price": 49
+  },
+  {
+    "make": "Audi",
+    "model": "A4",
+    "year": 2005,
+    "rating": null,
+    "price": 40
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2012,
+    "rating": null,
+    "price": 36
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2005,
+    "rating": null,
+    "price": 32
+  },
+  {
+    "make": "BMW",
+    "model": "X3",
+    "year": 2021,
+    "rating": 4.76,
+    "price": 47
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2013,
+    "rating": 4.69,
+    "price": 44
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2005,
+    "rating": 2.76,
+    "price": 39
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2022,
+    "rating": null,
+    "price": 56
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2017,
+    "rating": 3.38,
+    "price": 53
+  },
+  {
+    "make": "Ford",
+    "model": "Focus",
+    "year": 2012,
+    "rating": null,
+    "price": 33
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2015,
+    "rating": 2.14,
+    "price": 35
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": null,
+    "price": 45
+  },
+  {
+    "make": "Jeep",
+    "model": "Renegade",
+    "year": 2011,
+    "rating": 2.04,
+    "price": 54,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg/560px-Jeep_Renegade_1.6_MultiJet_2WD_Longitude_%E2%80%93_Frontansicht%2C_9._November_2014%2C_D%C3%BCsseldorf.jpg"
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2012,
+    "rating": 3.85,
+    "price": 35
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2009,
+    "rating": 4.88,
+    "price": 36
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2018,
+    "rating": 2.39,
+    "price": 57
+  },
+  {
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2010,
+    "rating": 4.2,
+    "price": 57
+  },
+  {
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2009,
+    "rating": 4.76,
+    "price": 38
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "year": 2017,
+    "rating": null,
+    "price": 55
+  },
+  {
+    "make": "Hyundai",
+    "model": "Tucson",
+    "year": 2014,
+    "rating": 3.85,
+    "price": 60
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2005,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2021,
+    "rating": null,
+    "price": 44
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2005,
+    "rating": 4.43,
+    "price": 30
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2015,
+    "rating": 3.21,
+    "price": 55
+  },
+  {
+    "make": "Tesla",
+    "model": "Model Y",
+    "year": 2024,
+    "rating": 3.43,
+    "price": 41
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2018,
+    "rating": null,
+    "price": 53
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2024,
+    "rating": 4.38,
+    "price": 35
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2013,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Honda",
+    "model": "Pilot",
+    "year": 2014,
+    "rating": 2.05,
+    "price": 39
+  },
+  {
+    "make": "Tesla",
+    "model": "Model X",
+    "year": 2009,
+    "rating": 2.57,
+    "price": 57
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "year": 2012,
+    "rating": null,
+    "price": 57,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg/2880px-Chevrolet_Equinox_LT_%28III%2C_Facelift%29_%E2%80%93_f_05102022.jpg"
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2022,
+    "rating": null,
+    "price": 30
+  },
+  {
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2023,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2022,
+    "rating": 2.72,
+    "price": 50
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "year": 2009,
+    "rating": 4.08,
+    "price": 32
+  },
+  {
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2005,
+    "rating": null,
+    "price": 59
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2019,
+    "rating": null,
+    "price": 58
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "year": 2019,
+    "rating": null,
+    "price": 32
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "year": 2016,
+    "rating": null,
+    "price": 40
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2006,
+    "rating": null,
+    "price": 34
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2020,
+    "rating": 2.28,
+    "price": 39
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2011,
+    "rating": null,
+    "price": 41
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2022,
+    "rating": 3.38,
+    "price": 44
+  },
+  {
+    "make": "Honda",
+    "model": "CR-V",
+    "year": 2014,
+    "rating": 2.09,
+    "price": 58
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2019,
+    "rating": 4.58,
+    "price": 34
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2018,
+    "rating": null,
+    "price": 42
+  },
+  {
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2014,
+    "rating": null,
+    "price": 32
+  },
+  {
+    "make": "Tesla",
+    "model": "Model Y",
+    "year": 2018,
+    "rating": null,
+    "price": 40
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "year": 2022,
+    "rating": null,
+    "price": 47
+  },
+  {
+    "make": "Audi",
+    "model": "A4",
+    "year": 2019,
+    "rating": 3.3,
+    "price": 56
+  },
+  {
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2018,
+    "rating": 3.17,
+    "price": 49
+  },
+  {
+    "make": "Toyota",
+    "model": "RAV4",
+    "year": 2019,
+    "rating": 3.6,
+    "price": 54
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2020,
+    "rating": 2.06,
+    "price": 58
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2019,
+    "rating": 4.83,
+    "price": 36
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "year": 2007,
+    "rating": 4.74,
+    "price": 33
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "year": 2020,
+    "rating": 3.9,
+    "price": 41
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "year": 2019,
+    "rating": 2.9,
+    "price": 49
+  },
+  {
+    "make": "Audi",
+    "model": "A6",
+    "year": 2014,
+    "rating": null,
+    "price": 33
+  },
+  {
+    "make": "Ford",
+    "model": "Explorer",
+    "year": 2013,
+    "rating": 3.43,
+    "price": 32
+  }
+]

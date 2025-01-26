@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
 import FlightCard from "~/app/_components/flight-card";
 import PlaneOverlay from "~/app/_components/plane-overlay";
+import { user_flights } from "@prisma/client";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -65,7 +66,7 @@ const Dashboard = () => {
           )}
         </div>
         {flightData.map((flight: any, index: number) => (
-          <FlightCard flight={flight} key={index} header={true} />
+          <FlightCard flight={flight} index={index} header={true} />
         ))}
       </div>
     </div>
