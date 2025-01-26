@@ -67,7 +67,7 @@ const Dashboard = () => {
           )}
         </div>
         {flightData.map((flight: any, index: number) => (
-          <FlightCard flight={flight} index={index} header={true} />
+          <FlightCard flight={flight} key={index} header={true} />
         ))}
       </div>
     </div>
