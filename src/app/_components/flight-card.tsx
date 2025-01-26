@@ -40,7 +40,7 @@ export default function FlightCard({ flight, header = true }: Props) {
             {parseDate(flight.departureTime).time}
           </p>
           <p className="font-light">
-            {flight.destination.city}, US ({flight.destination.code})
+            {flight.origin.city}, US ({flight.origin.code})
           </p>
         </div>
         <div className="flex items-center justify-center gap-4">
@@ -56,7 +56,7 @@ export default function FlightCard({ flight, header = true }: Props) {
             {parseDate(flight.arrivalTime).time}
           </p>
           <p className="font-light">
-            {flight.origin.city}, US ({flight.origin.code})
+            {flight.destination.city}, US ({flight.destination.code})
           </p>
         </div>
       </div>
