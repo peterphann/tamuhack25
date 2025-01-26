@@ -21,6 +21,10 @@ export default function Manage() {
     }
   }, [flight]);
 
+  if (!flightData) {
+    return;
+  }
+
   return (
     <>
       <div className={"mx-32 mt-10"}>
