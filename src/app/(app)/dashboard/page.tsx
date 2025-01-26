@@ -120,7 +120,7 @@ const Dashboard = () => {
               </div>
               <div className="flex items-center justify-center gap-4">
                 <img src="beeline1.svg" alt="" className="w-5/12" />
-                <p className="w-2/12 flex justify-center rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-lg font-semibold">
+                <p className="w-fit text-sm text-center flex justify-center rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-lg font-semibold">
                   {flight.duration.hours} hr {flight.duration.minutes} min
                 </p>
                 <img src="beeline2.svg" alt="" className="w-5/12" />
