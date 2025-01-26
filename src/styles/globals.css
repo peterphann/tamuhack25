@@ -6,6 +6,11 @@
     clip-path: polygon(0 0, 100% 0, 100% 60%,0 95%);
 }
 
+.line-animation {
+  animation: draw-line 2s ease-in-out forwards;
+}
+
+
 @layer base {
   :root {
         --background: 0 0% 100%;

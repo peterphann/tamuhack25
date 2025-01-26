@@ -5,12 +5,17 @@ import { useState } from "react";
 import type { Itinerary } from "~/app/types/types";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
+import { RiSaveFill } from "react-icons/ri";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { Separator } from "~/components/ui/separator";
 import { Input } from "~/components/ui/input";
 import CalendarPicker from "~/app/_components/calendar-picker";
 import { format, parseISO } from "date-fns";
 import { Button } from "~/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "~/components/ui/dialog";
+import Spinner from "~/app/_components/spinner";
+import { RiMapPin2Fill, RiExternalLinkFill } from "react-icons/ri";
+import Link from "next/link";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -38,6 +43,8 @@ export default function ItineraryCreate() {
   const dateParam = searchParams.get("date")
   const [date, setDate] = useState<Date>(dateParam ? parseISO(dateParam) : new Date());
   const [scheduleLoad, setScheduleLoad] = useState<string>("balanced");
+  const [isSaveOpen, setSaveOpen] = useState<boolean>(false);
+  const [itineraryName, setItineraryName] = useState<string>("");
   const [preferences, setPreferences] = useState<PreferenceChoices>({
     food: false,
     entertainment: false,
@@ -92,11 +99,23 @@ export default function ItineraryCreate() {
         <div className="flex w-2/3 flex-col gap-6">
           {itinerary?.itinerary.map((item, index) => (
             <div key={index}>
-              <p className="text-xl font-semibold">
-                {item.time}{" "}
-                – {item.activity}
+              <p className="text-sm opacity-50">
+                {item.time}
               </p>
-              <p>{item.description}</p>
+              <div className="flex space-x-2 items-center">
+                <p className="text-xl font-semibold">
+                  {item.activity}
+                </p>
+                {item.website &&
+                <Link href={item.location}>
+                  <RiMapPin2Fill className="w-5 h-5 opacity-25" />
+                </Link>}
+                {item.website &&
+                <a href={item.website} target="_blank" rel="noopener noreferrer">
+                  <RiExternalLinkFill className="w-5 h-5 opacity-25" />
+                </a>}
+              </div>
+              <p className="text-sm">{item.description}</p>
             </div>
           ))}
         </div>
@@ -177,7 +196,31 @@ export default function ItineraryCreate() {
               </div>
             </RadioGroup>
           </div>
-          <Button disabled={pageStatus === "loading"} type="submit" className="w-52 mt-3">Generate Itinerary</Button>
+          
+          <div className="flex items-center mt-3 space-x-3">
+            <Button disabled={pageStatus === "loading"} type="submit" className="w-52">
+              {pageStatus === "loading" ? <Spinner /> : <span>Generate Itinerary</span>}
+            </Button>
+            <Button disabled={pageStatus === "loading"} type="button" onClick={() => setSaveOpen(true)}>
+              <RiSaveFill />
+            </Button>
+
+            <Dialog open={isSaveOpen} onOpenChange={setSaveOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle className="mb-4">Enter a name for this itinerary:</DialogTitle>
+                  
+                  <DialogDescription className="text-black">
+                    <Label className="opacity-50">Name</Label>
+                    <Input value={itineraryName} onChange={e => setItineraryName(e.target.value)} placeholder="Untitled Itinerary" />
+
+                    <Button className="mt-6">Save</Button>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+            
+          </div>
         </form>
       </div>
     </div>

@@ -1,8 +1,9 @@
+import Image from "next/image";
+import type { AggregateFlightDetails } from "../types/types";
 import FlightHeader from "./flight-header";
 
 interface Props {
-  flight: any;
-  index: number;
+  flight: AggregateFlightDetails;
   header: boolean;
 }
 
@@ -44,11 +45,11 @@ export default function FlightCard({ flight, header = true }: Props) {
           </p>
         </div>
         <div className="flex items-center justify-center gap-4">
-          <img src="beeline1.svg" alt="" className="w-5/12" />
+          <Image src="beeline1.svg" alt="" width={"20"} height={"20"} className="w-5/12 h-auto" />
           <p className="flex w-fit justify-center rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-center text-sm font-semibold">
             {flight.duration.hours} hr {flight.duration.minutes} min
           </p>
-          <img src="beeline2.svg" alt="" className="w-5/12" />
+          <Image src="beeline2.svg" alt="" width={"20"} height={"20"} className="w-5/12 h-auto" />
         </div>
         <div className="flex flex-col text-right">
           <p className="font-light">{parseDate(flight.arrivalTime).date}</p>

@@ -8,6 +8,7 @@ import { Afacad } from "next/font/google";
 import FlightCard from "~/app/_components/flight-card";
 import Link from "next/link";
 import PlaneOverlay from "~/app/_components/plane-overlay";
+import type { AggregateFlightDetails } from "~/app/types/types";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -16,12 +17,11 @@ const afacad = Afacad({
 export default function Manage() {
   const searchParams = useSearchParams();
   const flight = searchParams.get("flight");
-  const [flightData, setFlightData] = useState<any>(null);
+  const [flightData, setFlightData] = useState<AggregateFlightDetails | null>(null);
 
   useEffect(() => {
     if (flight) {
-      setFlightData(JSON.parse(flight as string));
-      console.log(JSON.parse(flight as string));
+      setFlightData(JSON.parse(flight) as AggregateFlightDetails);
     }
   }, [flight]);
 
@@ -38,7 +38,7 @@ export default function Manage() {
         </h1>
       </div>
       <div className="flex flex-col gap-4">
-        <FlightCard flight={flightData} index={0} header={false} />
+        <FlightCard flight={flightData} header={false} />
         <p className={"text-xl text-[#808080] " + afacad.className}>
           Sorry your flight was <span className="text-[#FF8080]">canceled</span>
           . Here are your options...

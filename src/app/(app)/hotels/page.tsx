@@ -12,6 +12,13 @@ import {
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
+import Image from "next/image";
+import { cn } from "~/lib/utils";
+import { Afacad } from "next/font/google";
+
+const afacad = Afacad({
+  subsets: ['latin']
+})
 
 export default function Hotels() {
   const searchParams = useSearchParams();
@@ -33,7 +40,7 @@ export default function Hotels() {
 
       try {
         const session = await getSession();
-        if (!session || !session.user?.id) {
+        if (!session?.user?.id) {
           console.error("User session not found.");
           return;
         }
@@ -151,7 +158,7 @@ export default function Hotels() {
             </DialogTrigger>
             <DialogContent>
               {/* <h2 className="mb-4 text-2xl font-bold">Use Your Credits</h2> */}
-              <DialogTitle className="mb-4 text-2xl font-bold">
+              <DialogTitle className={cn("mb-4 text-2xl font-bold", afacad.className)}>
                 Use Your Credits
               </DialogTitle>
               <p className="mb-4 text-sm text-gray-600">
@@ -180,9 +187,11 @@ export default function Hotels() {
         {hotelResults.map((hotel: any, index: number) => (
           <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md">
             {hotel.photo && (
-              <img
+              <Image
                 src={hotel.photo}
                 alt={`Photo of ${hotel.name}`}
+                width={"200"}
+                height={"200"}
                 className="mb-4 h-40 w-full rounded-lg object-cover"
               />
             )}

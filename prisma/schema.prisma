@@ -64,13 +64,15 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model user_flights {
+model userFlights {
   user_id        String?
   date           String?
   flight_id      String?
   canceled       Boolean?
   id             Int      @id @default(autoincrement())
   voucher_amount Int?
+
+  @@map("user_flights")
 }
 
 model itineraries {

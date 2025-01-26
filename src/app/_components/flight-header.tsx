@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { RiArrowRightSLine } from "react-icons/ri";
+import type { AggregateFlightDetails } from "../types/types";
 
 interface Props {
-  flight: any;
+  flight: AggregateFlightDetails;
 }
 
 const FlightHeader = ({ flight }: Props) => {

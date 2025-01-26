@@ -1,8 +1,10 @@
 "use client";
 
 import { Afacad } from "next/font/google";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { AggregateFlightDetails, Car } from "~/app/types/types";
 import { cn } from "~/lib/utils";
 
 const afacad = Afacad({
@@ -12,25 +14,28 @@ const afacad = Afacad({
 export default function Rentals() {
   const searchParams = useSearchParams();
   const flight = searchParams.get("flight");
-  const [flightData, setFlightData] = useState<any>(null);
-  const [cars, setCars] = useState<any>([]);
+  const [flightData, setFlightData] = useState<AggregateFlightDetails | null>(null);
+  const [cars, setCars] = useState<Car[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (flight) {
-      setFlightData(JSON.parse(flight as string));
+      setFlightData(JSON.parse(flight) as AggregateFlightDetails);
     }
   }, [flight]);
 
   useEffect(() => {
     async function fetchCars() {
       const response = await fetch("cars.json");
-      const data = await response.json();
+      const data: Car[] = await response.json() as Car[];
 
       const randomCars = data.sort(() => 0.5 - Math.random()).slice(0, 10);
       setCars(randomCars);
     }
 
-    fetchCars();
+    fetchCars()
+    .then(() => setIsLoading(false))
+    .catch(err => console.error(err));
   }, []);
 
   if (!flightData) {
@@ -48,13 +53,13 @@ export default function Rentals() {
           American Airline Credits
         </p>
       </div>
+
+      {isLoading && <p className={afacad.className}>Loading rental cars...</p>}
+
       <div className="grid grid-cols-3 gap-8">
-        {cars.map((car: any, index: number) => (
+        {cars.map((car: Car, index: number) => (
           <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md">
-            <img
-              src={car.image}
-              className="mb-4 h-40 w-full rounded-lg object-cover"
-            />
+            <Image className="mb-4 h-40 w-full rounded-lg object-cover" src={car.image} alt="car" width="100" height="100"  />
             <div className="mb-2 flex justify-between">
               <p className="text-xl font-bold">${car.price}/day</p>
               <p className="text-sm text-gray-500">{car.rating || "N/A"}</p>
