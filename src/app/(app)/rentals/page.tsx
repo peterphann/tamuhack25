@@ -1,7 +1,13 @@
 "use client";
 
+import { Afacad } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { cn } from "~/lib/utils";
+
+const afacad = Afacad({
+  subsets: ["latin"],
+});
 
 export default function Rentals() {
   const searchParams = useSearchParams();
@@ -33,7 +39,7 @@ export default function Rentals() {
 
   return (
     <div className="mx-32 my-16">
-      <div className="mb-6 flex items-center justify-between">
+      <div className={cn("mb-6 flex items-center justify-between", afacad.className)}>
         <h1 className="text-4xl font-bold">
           Rentals near {flightData.origin.city || "your location"}
         </h1>
