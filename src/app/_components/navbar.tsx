@@ -29,11 +29,7 @@ export const Navbar = () => {
                     <Image className="w-14 rounded-full" src={session.user.image ?? "/avatar.png"} alt="Profile" width="100" height="100"/>
                 </PopoverTrigger>
                 <PopoverContent className="w-44 text-sm space-y-2" align="end">
-                    <Link href="/account" className="hover:opacity-50 duration-200 transition-opacity">
-                        <div>
-                            Account
-                        </div>
-                    </Link>
+
                     <div className="hover:cursor-pointer hover:opacity-50 duration-200 transition-opacity" onClick={() => signOut({callbackUrl: "/", redirect: true})}>
                         Sign Out
                     </div>

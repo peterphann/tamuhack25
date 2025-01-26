@@ -1,12 +1,16 @@
 import Image from "next/image";
 import { Afacad } from "next/font/google";
-import {RiArrowRightSLine } from "react-icons/ri";
+import {RiArrowRightSLine, RiMailFill } from "react-icons/ri";
 const afacad = Afacad({
   subsets: ["latin"],
 });
 export default function Support() {
   return (
     <div className="mx-28 mb-16">
+      <div className="fixed bottom-20 right-20 -z-50 h-96 w-96 -rotate-45 scale-[2] opacity-[0.03]">
+        <RiMailFill className="h-full w-full" />
+      </div>
+
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>Having Issues?</h1>
         <p className={"mt-2 text-xl text-[#808080] " + afacad.className}>
