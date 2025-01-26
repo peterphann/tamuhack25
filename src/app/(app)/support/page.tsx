@@ -33,7 +33,7 @@ export default function Support() {
               </div>
               <div>
                 <p className="mt-1 mb-6">
-                  Contact American airlines for support regarding flight delay
+                  Contact American Airlines for support regarding flight delay
                   times and cancellations.
                 </p>
               </div>
@@ -61,7 +61,7 @@ export default function Support() {
               </div>
               <div>
                 <p>
-                Contact flock for support regarding our itinerary creation, hotel voucher management, and car rental services.
+                Contact Flock for support regarding our itinerary creation, hotel voucher management, and car rental services.
                 </p>
               </div>
             </div>
