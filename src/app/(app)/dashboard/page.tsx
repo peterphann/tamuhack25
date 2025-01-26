@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
+import { RiPlaneFill } from "react-icons/ri";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -64,6 +65,10 @@ const Dashboard = () => {
 
   return (
     <div className="mx-24 my-16">
+      <div className="fixed -z-50 bottom-20 right-20 scale-[2.5] -rotate-45 w-96 h-96 opacity-5">
+            <RiPlaneFill className="w-full h-full" />
+        </div>
+      
       <div className="flex flex-col">
         <div className={"flex gap-4 " + afacad.className}>
           <h1 className="mb-2 text-7xl font-bold">
@@ -88,12 +93,14 @@ const Dashboard = () => {
           <div className="mt-12 flex flex-col" key={index}>
             <div className="flex items-center gap-4">
               <p className="text-lg font-bold">Flight {flight.flight_id}</p>
-              <p className="group cursor-pointer rounded-3xl bg-slate-200 px-3 py-1 text-sm hover:bg-slate-300">
-                Manage{" "}
-                <span className="duration-100 ease-in-out group-hover:ml-2">
-                  &#8594;
-                </span>
-              </p>
+              <a href={"/manage"}>
+                <p className="group cursor-pointer rounded-3xl bg-slate-200 px-3 py-1 text-sm hover:bg-slate-300">
+                  Manage{" "}
+                  <span className="duration-100 ease-in-out group-hover:ml-2">
+                    &#8594;
+                  </span>
+                </p>
+              </a>
               {flight.canceled && (
                 <p className="flex-1 text-right text-red">Status: canceled</p>
               )}
