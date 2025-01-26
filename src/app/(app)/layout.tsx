@@ -7,10 +7,7 @@ export default function RootLayout({
   return (
     <SessionProvider>
       <Navbar />
-
-  <main>
-      {children}
-  </main>
+      <main>{children}</main>
     </SessionProvider>
   );
 }
