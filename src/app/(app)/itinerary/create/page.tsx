@@ -50,12 +50,14 @@ export default function ItineraryCreate() {
 
 
   const [itinerary, setItinerary] = useState<Itinerary | null>(null);
+  const [pageStatus, setPageStatus] = useState<string>("loaded");
 
   const generateItinerary = () => {
     const formattedDate = format(date, 'yyyy-MM-dd');
     const formattedPreferences = getTrueKeys(preferences);
     const endpoint = `/api/itinerary/generate?location=${location}&date=${formattedDate}&preferences=${formattedPreferences}&scheduleLoad=${scheduleLoad}`
     
+    setPageStatus("loading");
     fetch(endpoint)
       .then(res => res.json())
       .then((data: Itinerary) => {
@@ -63,10 +65,11 @@ export default function ItineraryCreate() {
         setItinerary(data);
       })
       .catch(err => console.error(err))
+      .finally(() => setPageStatus("loaded"))
   } 
 
   return (
-    <div className="mx-24 my-12">
+    <div className="mx-28 my-10">
       {itinerary ? <div>
         <p className={"text-6xl font-bold " + afacad.className}>
         Itinerary for {itinerary.city}
@@ -84,6 +87,7 @@ export default function ItineraryCreate() {
         Choose your settings to generate an itinerary.
       </p>
       </div>}
+
       <div className="mt-6 flex gap-4">
         <div className="flex w-2/3 flex-col gap-6">
           {itinerary?.itinerary.map((item, index) => (
@@ -97,16 +101,16 @@ export default function ItineraryCreate() {
           ))}
         </div>
         <div className="border-l border-gray-300"></div>
-        <div className="flex flex-col gap-4">
+        <form onSubmit={e => {e.preventDefault(); generateItinerary()}} className="flex flex-col gap-4">
           <div className="space-y-4">
             <div className="flex flex-col space-y-2 w-72">
               <Label>Location</Label>
-              <Input value={location ?? ""} onChange={e => setLocation(e.target.value)} />
+              <Input disabled={pageStatus === "loading"} value={location ?? ""} onChange={e => setLocation(e.target.value)} />
             </div>
 
             <div className="flex flex-col space-y-2">
               <Label>Date</Label>
-              <CalendarPicker date={date} setDate={setDate} />
+              <CalendarPicker disabled={pageStatus === "loading"} date={date} setDate={setDate} />
             </div>
           </div>
           <Separator />
@@ -114,31 +118,31 @@ export default function ItineraryCreate() {
             <p className="text-xl font-semibold">Preferences</p>
             <div className="mt-2 flex flex-wrap gap-2 mb-2">
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.food} onCheckedChange={() => setPreferences({...preferences, food: !preferences.food})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.food} onCheckedChange={() => setPreferences({...preferences, food: !preferences.food})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Food</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.entertainment} onCheckedChange={() => setPreferences({...preferences, entertainment: !preferences.entertainment})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.entertainment} onCheckedChange={() => setPreferences({...preferences, entertainment: !preferences.entertainment})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Entertainment</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.culture} onCheckedChange={() => setPreferences({...preferences, culture: !preferences.culture})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.culture} onCheckedChange={() => setPreferences({...preferences, culture: !preferences.culture})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Culture</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.shopping} onCheckedChange={() => setPreferences({...preferences, shopping: !preferences.shopping})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.shopping} onCheckedChange={() => setPreferences({...preferences, shopping: !preferences.shopping})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Shopping</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.nature} onCheckedChange={() => setPreferences({...preferences, nature: !preferences.nature})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.nature} onCheckedChange={() => setPreferences({...preferences, nature: !preferences.nature})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Nature</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.relaxation} onCheckedChange={() => setPreferences({...preferences, relaxation: !preferences.relaxation})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.relaxation} onCheckedChange={() => setPreferences({...preferences, relaxation: !preferences.relaxation})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Relaxation</p>
               </div>
               <div className="flex w-fit items-center gap-2 rounded-2xl border px-2 py-1">
-                <Checkbox checked={preferences.family} onCheckedChange={() => setPreferences({...preferences, family: !preferences.family})} className="rounded-full border-gray-400" />
+                <Checkbox disabled={pageStatus === "loading"} checked={preferences.family} onCheckedChange={() => setPreferences({...preferences, family: !preferences.family})} className="rounded-full border-gray-400" />
                 <p className="text-sm">Family</p>
               </div>
             </div>
@@ -146,7 +150,7 @@ export default function ItineraryCreate() {
           <Separator />
           <div>
             <p className="mb-2 text-xl font-semibold">Intensity</p>
-            <RadioGroup onValueChange={value => setScheduleLoad(value)} defaultValue="balanced" value={scheduleLoad}>
+            <RadioGroup disabled={pageStatus === "loading"} onValueChange={value => setScheduleLoad(value)} defaultValue="balanced" value={scheduleLoad}>
               <div className="flex items-center space-x-2">
                 <RadioGroupItem
                   value="relaxed"
@@ -173,8 +177,8 @@ export default function ItineraryCreate() {
               </div>
             </RadioGroup>
           </div>
-          <Button onClick={generateItinerary} className="w-52 mt-3">Generate Itinerary</Button>
-        </div>
+          <Button disabled={pageStatus === "loading"} type="submit" className="w-52 mt-3">Generate Itinerary</Button>
+        </form>
       </div>
     </div>
   );

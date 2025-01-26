@@ -8,14 +8,16 @@ import { cn } from "~/lib/utils";
 
 interface CalendarPickerProps {
     date: Date,
-    setDate: Dispatch<SetStateAction<Date>>
+    setDate: Dispatch<SetStateAction<Date>>,
+    disabled: boolean
 }
 
-export default function CalendarPicker({date, setDate}: CalendarPickerProps) {
+export default function CalendarPicker({date, setDate, disabled=false}: CalendarPickerProps) {
 
     return <Popover>
     <PopoverTrigger asChild>
       <Button
+        disabled={disabled}
         variant={"outline"}
         className={cn(
           "w-72 justify-start text-left font-normal",

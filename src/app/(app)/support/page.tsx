@@ -6,7 +6,7 @@ const afacad = Afacad({
 });
 export default function Support() {
   return (
-    <div className="mx-32 mb-16">
+    <div className="mx-28 mb-16">
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>Having Issues?</h1>
         <p className={"mt-2 text-xl text-[#808080] " + afacad.className}>
