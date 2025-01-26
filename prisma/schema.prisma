@@ -65,11 +65,12 @@ model VerificationToken {
 }
 
 model user_flights {
-  user_id   String?
-  date      String?
-  flight_id String?
-  canceled  Boolean?
-  id        Int      @id @default(autoincrement())
+  user_id        String?
+  date           String?
+  flight_id      String?
+  canceled       Boolean?
+  id             Int      @id @default(autoincrement())
+  voucher_amount Int?
 }
 
 model itineraries {
