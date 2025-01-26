@@ -21,13 +21,13 @@ export default function Home() {
       <Image src={"/plane.png"} alt="Plane Banner" width="3000" height="1250" />
     </div>
 
-    <div className={"mx-32 mt-10"}>
+    <div className={"mx-28 mt-10"}>
       <h1 className={"text-6xl font-bold " + afacad.className}>
         Make delays more managable!
       </h1>
 
       <h2 className="mt-4 text-xl w-5/12">
-        Get easy access to hotel vouchers and itinerary planning in the city you&apos;re delayed in.
+        Get easy access to itinerary planning, hotel vouchers, and car rentals in the city you&apos;re delayed in.
       </h2>
 
       {session

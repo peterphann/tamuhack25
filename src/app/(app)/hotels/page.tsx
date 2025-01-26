@@ -11,6 +11,7 @@ import {
   DialogTitle,
 } from "~/components/ui/dialog";
 import { Input } from "~/components/ui/input";
+import { RiExternalLinkFill, RiStarFill } from "react-icons/ri";
 import { Button } from "~/components/ui/button";
 import Image from "next/image";
 import { cn } from "~/lib/utils";
@@ -30,6 +31,8 @@ export default function Hotels() {
   const [hotelResults, setHotelResults] = useState<any>(null);
   const [inputAmount, setInputAmount] = useState<string>(""); // Input value for credits
   const [generatedCode, setGeneratedCode] = useState<string>("");
+
+  const [redemptionMessage, setRedemptionMessage] = useState<string>("");
 
   useEffect(() => {
     const fetchVoucherAmount = async () => {
@@ -94,10 +97,19 @@ export default function Hotels() {
 
   const handleUseCredits = async () => {
     const amount = parseFloat(inputAmount);
-    if (isNaN(amount) || amount <= 0 || amount > (voucherAmount || 0)) {
-      alert("Please enter a valid amount within your available credits.");
+    if (isNaN(amount)) {
+      setRedemptionMessage("Please enter a valid amount.")
       return;
     }
+    if (amount <= 0) {
+      setRedemptionMessage("Please enter a positive number.")
+      return;
+    }
+    if (amount > (voucherAmount ?? 0)) {
+      setRedemptionMessage("You do not have enough credits.")
+      return;
+    }
+    setRedemptionMessage("")
 
     // Generate random code
     const code = Math.random().toString(36).substring(2, 10).toUpperCase();
@@ -142,11 +154,11 @@ export default function Hotels() {
   return (
     <div className="mx-32 mt-10">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-4xl font-bold">
-          Hotels near {airportCode || "your location"}
+        <h1 className={cn("text-4xl font-bold", afacad.className)}>
+          Hotels near {airportCode ?? "your location"}
         </h1>
         <div className="flex items-center gap-4">
-          <p className="text-xl font-medium text-gray-700">
+          <p className={cn("text-xl font-medium text-gray-700", afacad.className)}>
             You have{" "}
             <span className="font-bold text-black">${voucherAmount}</span> in
             credits
@@ -157,35 +169,41 @@ export default function Hotels() {
               <Button className="bg-black text-white">Use Credits</Button>
             </DialogTrigger>
             <DialogContent>
-              {/* <h2 className="mb-4 text-2xl font-bold">Use Your Credits</h2> */}
-              <DialogTitle className={cn("mb-4 text-2xl font-bold", afacad.className)}>
+              <DialogTitle>
                 Use Your Credits
               </DialogTitle>
-              <p className="mb-4 text-sm text-gray-600">
+              <p className="opacity-50 text-sm">
                 Enter the amount of credits you want to use (up to $
                 {voucherAmount}):
               </p>
-              <Input
-                value={inputAmount}
-                onChange={(e) => setInputAmount(e.target.value)}
-                placeholder="Enter amount"
-                className="mb-4"
-              />
-              <DialogFooter>
-                <Button
-                  onClick={handleUseCredits}
-                  className="bg-green-600 text-white hover:bg-green-700"
-                >
-                  Submit
-                </Button>
-              </DialogFooter>
+              <form onSubmit={e => {e.preventDefault(); handleUseCredits()}}>
+                <Input
+                  value={inputAmount}
+                  onChange={(e) => setInputAmount(e.target.value)}
+                  placeholder="Enter amount"
+                  className="mb-4"
+                />
+                <div className="flex justify-between">
+                  <div className="flex items-center w-80 text-red text-sm">
+                    {redemptionMessage}
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="bg-green-600 text-white hover:bg-green-700"
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </form>
             </DialogContent>
           </Dialog>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-8 mb-20">
         {hotelResults.map((hotel: any, index: number) => (
-          <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md">
+          <div key={index} className="rounded-lg bg-gray-100 p-6 shadow-md flex flex-col justify-between">
+            <div>
             {hotel.photo && (
               <Image
                 src={hotel.photo}
@@ -197,19 +215,24 @@ export default function Hotels() {
             )}
             <div className="mb-2 flex justify-between">
               <p className="text-xl font-bold">${hotel.price}</p>
-              <p className="text-sm text-gray-500">{hotel.rating || "N/A"}/5</p>
+              <p className="text-sm text-gray-500 flex items-center gap-x-1">
+                <span>{hotel.rating || "N/A"} / 5</span>
+                <RiStarFill className="opacity-50" />
+              </p>
             </div>
             <h2 className="mb-1 text-lg font-semibold">{hotel.name}</h2>
             <p className="mb-4 text-sm text-gray-500">
               {hotel.address || "Address not available"}
             </p>
+            </div>
             <a
               href={hotel.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full rounded bg-black px-4 py-2 text-center text-white hover:bg-gray-700"
+              className="transition-colors flex justify-center items-center space-x-2 w-full rounded bg-black px-4 py-2 text-center text-white hover:bg-zinc-800"
             >
-              Book Hotel
+              <p>Book Hotel</p>
+              <RiExternalLinkFill />
             </a>
           </div>
         ))}

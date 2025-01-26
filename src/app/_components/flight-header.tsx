@@ -21,9 +21,10 @@ const FlightHeader = ({ flight }: Props) => {
           <RiArrowRightSLine className="w-4 h-4 inline-block duration-100 ease-in-ou ml-0.5 group-hover:ml-2"/>
         </p>
       </Link>
-      {flight.canceled && (
-        <p className="flex-1 text-right text-red">Canceled</p>
-      )}
+      {flight.canceled
+      ? <p className="flex-1 text-right text-red">Canceled</p>
+      : <p className="flex-1 text-right text-green-500">On Time</p>
+      }
     </div>
   );
 };

@@ -59,11 +59,11 @@ const Dashboard = () => {
         <div className={afacad.className}>
           <p className="text-xl font-light opacity-50">
             Manage your <span className="text-red">canceled</span> flights and
-            plans
+            plans.
           </p>
 
           {
-            isLoading && <p className="mt-8">Loading your flights...</p>
+            isLoading && <p className="mt-8 text-lg">Loading your flights...</p>
           }
           {hasCanceled && (
             <div className="mt-8 flex items-center gap-2 text-red">

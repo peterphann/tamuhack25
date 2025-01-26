@@ -46,7 +46,7 @@ export default function FlightCard({ flight, header = true }: Props) {
         </div>
         <div className="flex items-center justify-center gap-4">
           <Image src="beeline1.svg" alt="" width={"20"} height={"20"} className="w-5/12 h-auto" />
-          <p className="flex w-fit justify-center rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-center text-sm font-semibold">
+          <p className="flex w-fit justify-center rounded-lg border border-solid border-slate-400 bg-white px-3 py-1 text-center text-xs font-semibold">
             {flight.duration.hours} hr {flight.duration.minutes} min
           </p>
           <Image src="beeline2.svg" alt="" width={"20"} height={"20"} className="w-5/12 h-auto" />

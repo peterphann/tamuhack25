@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Afacad } from "next/font/google";
-import {RiArrowRightSLine, RiMailFill } from "react-icons/ri";
+import {RiArrowRightSLine, RiQuestionFill } from "react-icons/ri";
 const afacad = Afacad({
   subsets: ["latin"],
 });
@@ -8,7 +8,7 @@ export default function Support() {
   return (
     <div className="mx-28 mb-16">
       <div className="fixed bottom-20 right-20 -z-50 h-96 w-96 -rotate-45 scale-[2] opacity-[0.03]">
-        <RiMailFill className="h-full w-full" />
+        <RiQuestionFill className="h-full w-full" />
       </div>
 
       <div className="mt-10">
@@ -32,7 +32,7 @@ export default function Support() {
                 </p>
               </div>
               <div>
-                <p>
+                <p className="mt-1 mb-6">
                   Contact American airlines for support regarding flight delay
                   times and cancellations.
                 </p>
@@ -43,9 +43,9 @@ export default function Support() {
                 <p>800-433-7300</p>
                 <p>american.support@aa.com</p>
               </div>
-              <a href="mailto:american.support@aa.com" className="w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
+              <a href="mailto:american.support@aa.com" className="transition-all text-sm w-fit group flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
                 <p>Email American Airlines</p>
-                <RiArrowRightSLine className=" w-6 h-6" />
+                <RiArrowRightSLine className="group-hover:ml-0.5 w-6 h-6" />
               </a>
             </div>
           </div>
@@ -70,9 +70,9 @@ export default function Support() {
                 <p>800-123-4567</p>
                 <p>flock@gmail.com</p>
               </div>
-              <div className="w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
+              <div className="transition-all group text-sm w-fit flex items-center gap-2 hover:gap-6 rounded-3xl bg-gray-200 px-4 py-2 cursor-pointer hover:bg-gray-300">
                 <p>Email Flock</p>
-                <RiArrowRightSLine className=" w-6 h-6" />
+                <RiArrowRightSLine className="group-hover:ml-0.5 w-6 h-6" />
               </div>
             </div>
           </div>

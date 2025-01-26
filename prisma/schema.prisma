@@ -76,8 +76,9 @@ model userFlights {
 }
 
 model itineraries {
-  user_id   String  @id(map: "itineraties_pkey")
-  name      String  @db.VarChar(50)
-  flight_id String?
-  itinerary Json?   @db.Json
+  itinerary_id   Int      @id @default(autoincrement())
+  user_id        String?
+  name           String?  @db.VarChar(50)
+  itinerary_data Json?    @db.Json
+  date_created   DateTime @default(now()) @db.Timestamp(6)
 }
