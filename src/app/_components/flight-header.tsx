@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RiArrowRightSLine } from "react-icons/ri";
 
 interface Props {
   flight: any;
@@ -14,11 +15,9 @@ const FlightHeader = ({ flight }: Props) => {
           query: { flight: JSON.stringify(flight) },
         }}
       >
-        <p className="group cursor-pointer rounded-3xl bg-slate-200 px-3 py-1 text-sm hover:bg-slate-300">
+        <p className="flex items-center justify-between group cursor-pointer rounded-3xl bg-slate-200 px-3 py-1 text-sm hover:bg-slate-300">
           Manage{" "}
-          <span className="duration-100 ease-in-out group-hover:ml-2">
-            &#8594;
-          </span>
+          <RiArrowRightSLine className="w-4 h-4 inline-block duration-100 ease-in-ou ml-0.5 group-hover:ml-2"/>
         </p>
       </Link>
       {flight.canceled && (
