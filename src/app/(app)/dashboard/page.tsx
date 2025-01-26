@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
 import { RiPlaneFill } from "react-icons/ri";
+import Link from "next/link";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -93,14 +94,19 @@ const Dashboard = () => {
           <div className="mt-12 flex flex-col" key={index}>
             <div className="flex items-center gap-4">
               <p className="text-lg font-bold">Flight {flight.flight_id}</p>
-              <a href={"/manage"}>
+              <Link
+                href={{
+                  pathname: "/manage",
+                  query: { flight: JSON.stringify(flight) },
+                }}
+              >
                 <p className="group cursor-pointer rounded-3xl bg-slate-200 px-3 py-1 text-sm hover:bg-slate-300">
                   Manage{" "}
                   <span className="duration-100 ease-in-out group-hover:ml-2">
                     &#8594;
                   </span>
                 </p>
-              </a>
+              </Link>
               {flight.canceled && (
                 <p className="flex-1 text-right text-red">Status: canceled</p>
               )}
