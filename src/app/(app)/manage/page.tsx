@@ -35,8 +35,8 @@ export default function Manage() {
         <h1 className={"text-6xl font-bold " + afacad.className}>
           Flight {flightData.flight_id}
         </h1>
-      </div>
-      <div className="flex flex-col gap-4">
+
+        <div className="flex flex-col gap-4">
         <FlightCard flight={flightData} index={0} header={false} />
         <p className={"text-xl text-[#808080] " + afacad.className}>
           Sorry your flight was <span className="text-[#FF8080]">canceled</span>
@@ -91,6 +91,8 @@ export default function Manage() {
           </div>
         </div>
       </div>
+      </div>
+      
     </>
   );
 }
