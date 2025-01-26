@@ -2,7 +2,7 @@
 import { Afacad } from "next/font/google";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-import type { Itinerary } from "~/app/types/types";
+import type { Event, Itinerary } from "~/app/types/types";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
 import { RiSaveFill } from "react-icons/ri";
@@ -27,6 +27,7 @@ import {
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { cn } from "~/lib/utils";
+import MapContainer from "~/app/_components/map-container";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -74,6 +75,9 @@ export default function ItineraryCreate() {
   const [itinerary, setItinerary] = useState<Itinerary | null>(null);
   const [alreadySaved, setAlreadySaved] = useState<boolean>(false);
   const [pageStatus, setPageStatus] = useState<string>("loaded");
+
+  const [mapVisible, setMapVisible] = useState<boolean>(false);
+  const [currentEvent, setCurrentEvent] = useState<Event | null>(null);
 
   const resetOptions = () => {
     setLocation("");
@@ -160,9 +164,9 @@ export default function ItineraryCreate() {
               <div className="flex items-center space-x-2">
                 <p className="text-xl font-semibold">{item.activity}</p>
                 {item.website && (
-                  <Link href={item.location}>
+                  <div className="hover:cursor-pointer" onClick={() => {setMapVisible(true); setCurrentEvent(item)}}>
                     <RiMapPin2Fill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
-                  </Link>
+                  </div>
                 )}
                 {item.website && (
                   <a
@@ -312,7 +316,7 @@ export default function ItineraryCreate() {
           </div>
           <Separator />
           <div>
-            <p className="mb-2 text-xl font-semibold">Intensity</p>
+            <p className="mb-2 text-xl font-semibold">Schedule Density</p>
             <RadioGroup
               disabled={pageStatus === "loading"}
               onValueChange={(value) => setScheduleLoad(value)}
@@ -398,6 +402,18 @@ export default function ItineraryCreate() {
                     </Button>
                   </div>
                 </DialogHeader>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={mapVisible} onOpenChange={setMapVisible}>
+              <DialogContent onCloseAutoFocus={() => setCurrentEvent(null)}>
+                <DialogTitle className="mb-3">
+                  {currentEvent?.activity}
+                </DialogTitle>
+
+                <div className="flex justify-center">
+                  <MapContainer query={currentEvent?.location} />
+                </div>
               </DialogContent>
             </Dialog>
           </div>

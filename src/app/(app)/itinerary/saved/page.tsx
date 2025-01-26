@@ -7,7 +7,8 @@ import { Afacad } from "next/font/google";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RiDeleteBin6Fill, RiAddLargeFill, RiMapPin2Fill, RiExternalLinkFill } from "react-icons/ri";
-import type { Itinerary } from "~/app/types/types";
+import MapContainer from "~/app/_components/map-container";
+import type { Event, Itinerary } from "~/app/types/types";
 import { Dialog, DialogTitle, DialogContent } from "~/components/ui/dialog";
 import { Separator } from "~/components/ui/separator";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "~/components/ui/sheet";
@@ -22,6 +23,9 @@ export default function Itineraries() {
     const [itineraries, setItineraries] = useState<itineraries[] | null>(null);
     const [selectedItinerary, setSelectedItinerary] = useState<itineraries | null>(null);
     const [itineraryOpen, setItineraryOpen] = useState<boolean>(false);
+
+    const [mapVisible, setMapVisible] = useState<boolean>(false);
+    const [currentEvent, setCurrentEvent] = useState<Event | null>(null);
 
     const deleteItinerary = (id: number) => {
         fetch(`/api/itinerary`, {
@@ -88,7 +92,19 @@ export default function Itineraries() {
             : <p>You have no saved itineraries!</p>}
             <RiAddLargeFill />
         </Link>}
+        
+        <Dialog open={mapVisible} onOpenChange={setMapVisible}>
+            <DialogContent onCloseAutoFocus={() => setCurrentEvent(null)}>
+            <DialogTitle className="mb-3">
+                {currentEvent?.activity}
+            </DialogTitle>
 
+            <div className="flex justify-center">
+                <MapContainer query={currentEvent?.location} />
+            </div>
+            </DialogContent>
+        </Dialog>
+            
         <Sheet open={itineraryOpen} onOpenChange={setItineraryOpen}>
             {selectedItinerary
             ? <SheetContent>
@@ -112,9 +128,9 @@ export default function Itineraries() {
                             <div className="flex items-center space-x-2">
                                 <p className="text-lg font-semibold">{item.activity}</p>
                                 {item.website && (
-                                <Link href={item.location}>
+                                <div className="hover:cursor-pointer" onClick={() => {setMapVisible(true); setCurrentEvent(item)}}>
                                     <RiMapPin2Fill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
-                                </Link>
+                                </div>
                                 )}
                                 {item.website && (
                                 <a
