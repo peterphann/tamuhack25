@@ -45,7 +45,7 @@ export default function Manage() {
       <div className="my-8 flex flex-row justify-between gap-4">
         <Link
           draggable="false"
-          href={"/itinerary/create?test"}
+          href={`/itinerary/create?location=${flightData.origin.city}&date=${flightData.departureTime}`}
           className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
         >
           <p className="mb-4 text-xl font-semibold">Itinerary Planning</p>
