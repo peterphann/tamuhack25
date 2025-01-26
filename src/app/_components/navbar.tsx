@@ -37,7 +37,8 @@ export const Navbar = () => {
             </Popover>
         </div>
         :
-        <div className={"flex justify-end text-lg"}>
+        <div className={"flex justify-end text-lg space-x-16"}>
+            <Link className="hover:opacity-50 duration-200 transition-opacity" href={"/support"}>Support</Link>
             <div className="hover:cursor-pointer hover:opacity-50 duration-200 transition-opacity" onClick={() => signIn("google", { callbackUrl: "/dashboard" })}>
                 Log In
             </div>
