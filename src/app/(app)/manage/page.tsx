@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Afacad } from "next/font/google";
 import FlightCard from "~/app/_components/flight-card";
+import Link from "next/link";
+import PlaneOverlay from "~/app/_components/plane-overlay";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -27,6 +29,7 @@ export default function Manage() {
 
   return (
     <div className="mx-32 mb-16">
+      <PlaneOverlay />
       <div className="mt-10">
         <h1 className={"text-6xl font-bold " + afacad.className}>
           Flight {flightData.flight_id}
@@ -39,34 +42,14 @@ export default function Manage() {
           . Here are your options...
         </p>
       </div>
-      <div className="mt-8 flex flex-row justify-between gap-4">
-        <div className="w-1/3 origin-bottom translate-y-0 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer">
-          <p className="mb-4 text-xl font-semibold">Hotel Voucher</p>
-          <div className="h-full rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
-            <img
-              src="hotel.jpg"
-              alt=""
-              className="mb-4 h-[320px] rounded object-cover"
-            />
-            <p>
-              If your flight is canceled or significantly delayed due to reasons
-              within American Airlines&apos; control (e.g., maintenance issues),
-              and you are away from your home city, the airline will provide...
-            </p>
-            <ul className="mt-4 list-outside list-disc pl-4">
-              <li>A voucher for an approved hotel with available rooms.</li>
-              <li>Transportation to and from the hotel.</li>
-              <li>Meal vouchers if the delay exceeds 3 hours.</li>
-            </ul>
-            <Button className="mt-4 bg-black text-white hover:bg-gray-600">
-              Redeem Vouchers
-            </Button>
-          </div>
-        </div>
-
-        <div className="w-1/3 origin-bottom translate-y-0 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer">
+      <div className="my-8 flex flex-row justify-between gap-4">
+        <Link
+          draggable="false"
+          href={"/itinerary/create?test"}
+          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
+        >
           <p className="mb-4 text-xl font-semibold">Itinerary Planning</p>
-          <div className="h-full rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+          <div className="flex h-full flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
             <img
               src="itinerary.webp"
               alt=""
@@ -77,14 +60,42 @@ export default function Manage() {
               with Flock to turn your delay into a fun day!
             </p>
             <Button className="mt-4 bg-black text-white hover:bg-gray-600">
+              Create an Itinerary
+            </Button>
+          </div>
+        </Link>
+
+        <div
+          draggable="false"
+          className="flex w-1/3 origin-bottom translate-y-0 select-none flex-col justify-between opacity-75 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer hover:opacity-100 active:translate-y-0 active:scale-100"
+        >
+          <p className="mb-2 text-xl font-semibold">Hotel Voucher</p>
+          <div className="flex h-96 flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+            <div>
+              <p>
+                If your flight is canceled or significantly delayed due to
+                reasons within American Airlines&apos; control (e.g.,
+                maintenance issues), and you are away from your home city, the
+                airline will provide...
+              </p>
+              <ul className="mt-4 list-outside list-disc pl-4">
+                <li>A voucher for an approved hotel with available rooms.</li>
+                <li>Transportation to and from the hotel.</li>
+                <li>Meal vouchers if the delay exceeds 3 hours.</li>
+              </ul>
+            </div>
+            <Button className="mt-4 bg-black text-white hover:bg-gray-600">
               Create Itinerary
             </Button>
           </div>
         </div>
 
-        <div className="w-1/3 origin-bottom translate-y-0 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer">
+        <div
+          draggable="false"
+          className="w-1/3 origin-bottom translate-y-0 select-none transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:cursor-pointer active:translate-y-0 active:scale-100"
+        >
           <p className="mb-4 text-xl font-semibold">Car Rentals</p>
-          <div className="h-full rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
+          <div className="flex h-full flex-col justify-between rounded-lg bg-[#F5F6F8] p-6 shadow-lg">
             <img
               src="car_rental.png"
               alt=""
@@ -97,7 +108,7 @@ export default function Manage() {
               the city you are delayed in.
             </p>
             <Button className="mt-4 bg-black text-white hover:bg-gray-600">
-              Rent a Car
+              Find a Rental
             </Button>
           </div>
         </div>

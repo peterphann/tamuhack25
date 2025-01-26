@@ -71,3 +71,10 @@ model user_flights {
   canceled  Boolean?
   id        Int      @id @default(autoincrement())
 }
+
+model itineraries {
+  user_id   String  @id(map: "itineraties_pkey")
+  name      String  @db.VarChar(50)
+  flight_id String?
+  itinerary Json?   @db.Json
+}
