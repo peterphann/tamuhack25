@@ -5,7 +5,8 @@ import { useSession } from "next-auth/react";
 import { Afacad } from "next/font/google";
 import FlightCard from "~/app/_components/flight-card";
 import PlaneOverlay from "~/app/_components/plane-overlay";
-import { user_flights } from "@prisma/client";
+import type { user_flights } from "@prisma/client";
+import { RiErrorWarningLine } from "react-icons/ri";
 
 const afacad = Afacad({
   subsets: ["latin"],
@@ -57,9 +58,9 @@ const Dashboard = () => {
             plans
           </p>
           {hasCanceled && (
-            <div className="mt-8 flex gap-2">
-              <img src="warning.svg" alt="" />
-              <p className="text-base text-red">
+            <div className="mt-8 flex items-center gap-2 text-red">
+              <RiErrorWarningLine />
+              <p className="text-base">
                 One of your flights was canceled!
               </p>
             </div>
