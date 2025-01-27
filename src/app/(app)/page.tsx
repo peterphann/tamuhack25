@@ -25,7 +25,7 @@ export default function Home() {
     <div className={"mx-28 mt-10"}>
       <motion.div initial={{opacity: 0, translateY: 20}} animate={{opacity: 1, translateY: 0}} transition={{duration: 3, delay: 0.5, type: "spring"}}>
         <h1 className={"text-6xl font-bold " + afacad.className}>
-          Make delays more managable!
+          Turn delays into fun days!
         </h1>
       </motion.div>
 
@@ -58,7 +58,7 @@ export default function Home() {
 
           <h3 className="text-2xl font-bold">Itinerary Planning</h3>
           <h4 className="text-4xl font-bold">Plan out your itinerary</h4>
-          <p className="text-xl">Make the most out of the city you are delayed in! Flock&apos;s built in itenery planning turns your delay into a fun day!</p>
+          <p className="text-xl">Make the most out of the city you are delayed in! Flock&apos;s built in itineary planning turns your delay into a fun day!</p>
         </div>
 
         <Image className="w-2/3 object-contain shadow-lg rounded-md hover:-translate-y-2 hover:translate-x-2 hover:scale-[1.01] duration-700" src={"/itinerary.png"} alt="hotels" width="1920" height="1080" />
