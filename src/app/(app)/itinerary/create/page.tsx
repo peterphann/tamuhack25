@@ -163,7 +163,7 @@ export default function ItineraryCreate() {
               <p className="text-sm opacity-50">{item.time}</p>
               <div className="flex items-center space-x-2">
                 <p className="text-xl font-semibold">{item.activity}</p>
-                {item.website && (
+                {item.location && (
                   <div className="hover:cursor-pointer" onClick={() => {setMapVisible(true); setCurrentEvent(item)}}>
                     <RiMapPin2Fill className="h-5 w-5 opacity-30 hover:opacity-20 transition-opacity" />
                   </div>
