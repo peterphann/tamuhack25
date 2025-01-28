@@ -157,7 +157,7 @@ export default function ItineraryCreate() {
           </div>
         )}
 
-        <div className="flex flex-col gap-6 mt-8 mr-8">
+        <div className="flex flex-col gap-6 mt-8 mr-0">
           {itinerary?.itinerary.map((item, index) => (
             <div key={index}>
               <p className="text-sm opacity-50">{item.time}</p>
