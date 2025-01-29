@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
+import type { PlaceDetailsResponseData, PlacesNearbyResponseData } from "@googlemaps/google-maps-services-js";
 
 const GOOGLE_PLACES_API_URL =
   "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
@@ -29,9 +30,11 @@ export async function GET(request: Request) {
         key: apiKey,
       },
     });
+    
+    const data = response.data as PlacesNearbyResponseData;
 
     const hotels = await Promise.all(
-      response.data.results.map(async (hotel: any) => {
+      data.results.map(async (hotel) => {
         // Fetch additional details for each hotel using the Place Details API
         const detailsResponse = await axios.get(GOOGLE_PLACE_DETAILS_API_URL, {
           params: {
@@ -41,29 +44,31 @@ export async function GET(request: Request) {
           },
         });
 
-        const details = detailsResponse.data.result;
+        const data = detailsResponse.data as PlaceDetailsResponseData;
+        const result = data.result;
 
         // Construct photo URL if photos are available
         const photoUrl =
-          details.photos && details.photos.length > 0
-            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${details.photos[0].photo_reference}&key=${apiKey}`
+          result.photos && result.photos.length > 0
+            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${result.photos[0]?.photo_reference}&key=${apiKey}`
             : null;
 
         return {
-          name: details.name,
-          rating: details.rating || "N/A",
+          name: result.name,
+          rating: result.rating ?? "N/A",
           photo: photoUrl,
-          website: details.website || details.url,
-          address: details.vicinity || "Address not available", // Address added here
+          website: result.website ?? result.url,
+          address: result.vicinity ?? "Address not available",
+          price: 100 // Address added here
         };
       }),
     );
 
     return NextResponse.json(hotels);
-  } catch (error: any) {
-    console.error("Error fetching hotel data:", error.message);
+  } catch (error) {
+    console.error("Error fetching hotel data:", error);
     return NextResponse.json(
-      { error: "Failed to fetch hotel data.", details: error.message },
+      { error: "Failed to fetch hotel data.", details: error },
       { status: 500 },
     );
   }
