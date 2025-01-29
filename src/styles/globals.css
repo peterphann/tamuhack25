@@ -10,7 +10,6 @@
   animation: draw-line 2s ease-in-out forwards;
 }
 
-
 @layer base {
   :root {
         --background: 0 0% 100%;

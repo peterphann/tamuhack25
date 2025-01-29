@@ -1,7 +1,7 @@
-import type { userFlights } from "@prisma/client";
+import type { UserFlight } from "@prisma/client";
 import { NextResponse } from "next/server";
-import type { Flight } from "~/app/types/types";
 import { db } from "~/server/db";
+import type { FlightEngineData } from "~/types/api-types";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -15,58 +15,41 @@ export async function GET(request: Request) {
   }
 
   try {
-    const result: userFlights[] = await db.userFlights.findMany({
+    const result: UserFlight[] = await db.userFlight.findMany({
       where: {
-        user_id: userId,
+        userId
       }
     });
 
-    let hasCanceled = false;
-
     // Fetch additional details from the flight engine for each flight
-    const flightDetails = await Promise.all(
-      result.map(async (flight: userFlights) => {
-        const apiUrl = `https://flight-engine-cf28.onrender.com/flights?date=${flight.date}&flightNumber=${flight.flight_id}`;
+    const flights = await Promise.all(
+      result.map(async (flight: UserFlight) => {
+        const apiUrl = `https://flight-engine-cf28.onrender.com/flights?date=${flight.date}&flightNumber=${flight.flightId}`;
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
           console.error(
-            `Failed to fetch details for flight ID ${flight.flight_id}`,
+            `Failed to fetch details for flight ID ${flight.flightId}`,
           );
           return {
-            flight_id: flight.flight_id,
+            flightNumber: flight.flightId,
             error: "Failed to fetch flight details",
           };
         }
 
-        const flightData: Flight[] = await response.json() as Flight[];
-
-        // Extract only the first flight for the given flight ID
+        const flightData: FlightEngineData[] = await response.json() as FlightEngineData[];
         const firstFlight = flightData[0];
 
-        if (flight.canceled) hasCanceled = true;
-
-        // Merge the basic flight info with the first detailed flight info
         return {
-          flight_id: flight.flight_id,
+          isCanceled: flight.isCanceled,
           date: flight.date,
-          flightNumber: firstFlight?.flightNumber,
-          origin: firstFlight?.origin,
-          destination: firstFlight?.destination,
-          departureTime: firstFlight?.departureTime,
-          arrivalTime: firstFlight?.arrivalTime,
-          distance: firstFlight?.distance,
-          duration: firstFlight?.duration,
-          aircraft: firstFlight?.aircraft,
-          canceled: flight.canceled,
+          ...firstFlight,
         };
       }),
     );
 
-    return NextResponse.json({
-      flights: flightDetails,
-      canceled: hasCanceled,
-    });
+    return NextResponse.json(flights, { status: 200 });
+    
   } catch (error) {
     console.error("Error fetching flight data:", error);
     return NextResponse.json(

@@ -1,34 +1,46 @@
 import { NextResponse } from "next/server";
 import { db } from "~/server/db";
 
+interface ItineraryPostRequest {
+    userId: string,
+    name: string,
+    data: string
+}
+
+interface ItineraryDeleteRequest {
+    userId: string,
+    itineraryId: number
+}
+
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
-    const userId = searchParams.get("user_id");
+    const userId = searchParams.get("userId");
 
     if (!userId) {
         return NextResponse.json(
-          { error: "'user_id' is required." },
+          { error: "'userId' is required." },
           { status: 400 },
         );
     }
 
-    const result = await db.itineraries.findMany({
+    const result = await db.itinerary.findMany({
         where: {
-            user_id: userId
+            userId
         }
-    })
+    });
 
     return NextResponse.json(result);
 }
 
+
 export async function POST(request: Request) {
-    const { userId, name, data } = await request.json()
+    const { userId, name, data } = await request.json() as ItineraryPostRequest;
     
-    const createdItinerary = await db.itineraries.create({
+    const createdItinerary = await db.itinerary.create({
         data: {
-            user_id: userId,
+            userId,
             name: name,
-            itinerary_data: data
+            itineraryData: data
         }
     })
 
@@ -36,12 +48,12 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-    const { userId, itineraryId } = await request.json()
+    const { userId, itineraryId } = await request.json() as ItineraryDeleteRequest;
     
-    const deletedItinerary = await db.itineraries.delete({
+    const deletedItinerary = await db.itinerary.delete({
         where: {
-            user_id: userId,
-            itinerary_id: itineraryId
+            userId,
+            itineraryId
         }
     })
 

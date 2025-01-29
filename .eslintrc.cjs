@@ -1,18 +1,19 @@
 /** @type {import("eslint").Linter.Config} */
 const config = {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
     "project": true
   },
-  "plugins": [
+  plugins: [
     "@typescript-eslint"
   ],
-  "extends": [
+  extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "prettier"
   ],
-  "rules": {
+  rules: {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": [
@@ -36,7 +37,15 @@ const config = {
           "attributes": false
         }
       }
-    ]
+    ],
+    "react/function-component-definition": [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function'
+      }
+    ],
+    "semi": "error"
   }
 }
 module.exports = config;
